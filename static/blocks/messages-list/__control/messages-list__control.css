@@ -1,0 +1,9 @@
+.messages-list__control {
+  height: 54px;
+  width: calc(100% - 40px);
+  height: 54px;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}

@@ -1,0 +1,17 @@
+.messages-list__button {
+  outline-style: none;
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+}
+
+.messages-list__button:first-of-type {
+  margin-right: 16px;
+}
+
+.messages-list__button:last-of-type {
+  margin-left: 10px;
+}

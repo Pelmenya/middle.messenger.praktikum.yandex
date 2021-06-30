@@ -1,0 +1,11 @@
+@import url(./__wrap/error__wrap.css);
+@import url(./__title/error__title.css);
+@import url(./__message/error__message.css);
+@import url(./__link/error__link.css);
+
+
+.error {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}

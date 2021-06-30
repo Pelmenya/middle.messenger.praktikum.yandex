@@ -1,0 +1,9 @@
+.messages-list__send {
+  display: block;
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='14' cy='14' r='14' fill='%233369F3'/%3E%3Crect x='8' y='13.2' width='11' height='1.6' fill='white'/%3E%3Cpath d='M15 9L19 14L15 19' stroke='white' stroke-width='1.6'/%3E%3C/svg%3E%0A");
+}
+
+.messages-list__send:active,
+.messages-list__send:focus {
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='14' cy='14' r='14' fill='%23ff2f2f'/%3E%3Crect x='8' y='13.2' width='11' height='1.6' fill='white'/%3E%3Cpath d='M15 9L19 14L15 19' stroke='white' stroke-width='1.6'/%3E%3C/svg%3E%0A");
+}

@@ -1,0 +1,28 @@
+@import url(./__error/form__error.css);
+@import url(./__error/_popup/form__error_popup.css);
+@import url(./__error/_is-opened/form__error_is-opened.css);
+@import url(./__error/_account/form__error_account.css);
+@import url(./__error/_server/_server.css);
+@import url(./__error/_margin/_margin.css);
+@import url(./__label/form__label.css);
+@import url(./__label/_hidden/form__label_hidden.css);
+@import url(./__link/form__link.css);
+@import url(./__text/form__text.css);
+@import url(./__button-link/form__button-link.css);
+@import url(./__signin/form__signin.css);
+@import url(./__signup/form__signup.css);
+@import url(./__wrap/form__wrap.css);
+@import url(./__wrap/_data/form__wrap_data.css);
+@import url(./__load-file/form__load-file.css);
+@import url(./__input-file/form__input-file.css);
+@import url(./__select-file/form__select-file.css);
+@import url(./__select-file/_ok/form__select-file_ok.css);
+@import url(./__user/form__user.css);
+@import url(./__btn-user/form__btn-user.css);
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

@@ -1,0 +1,12 @@
+.error__link {
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 11px;
+  letter-spacing: 0em;
+  text-align: center;
+  text-decoration: none;
+  color: #3369f3;
+  margin: 0;
+}

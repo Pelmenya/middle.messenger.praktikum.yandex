@@ -1,0 +1,13 @@
+.form__error_popup {
+  font-size: 11px;
+  line-height: 11px;
+  margin-top: 14px;
+  margin-bottom: 0px;
+}
+
+.form__error_popup:last-of-type {
+  font-size: 11px;
+  line-height: 11px;
+  margin-top: 14px;
+  margin-bottom: 0px;
+}

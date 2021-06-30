@@ -1,0 +1,14 @@
+@import url(./__button-icon/menu__button-icon.css);
+@import url(./__button-icon/_cross/menu__button-icon_cross.css);
+@import url(./__button-icon/_file/menu__button-icon_file.css);
+@import url(./__button-icon/_photo/menu__button-icon_photo.css);
+@import url(./__button-icon/_location/menu__button-icon_location.css);
+@import url(./__button-icon/_plus/menu__button-icon_plus.css);
+@import url(./__button-text/menu__button-text.css);
+@import url(./__button/menu__button.css);
+@import url(./_is-opened/menu_is-opened.css);
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,10 @@
+.messages-list__align-start {
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: calc(100% - 20px);
+  margin-top: 10px;
+}
+
+.messages-list__align-start:first-of-type {
+  margin-top: 30px;
+}

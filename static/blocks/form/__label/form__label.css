@@ -1,0 +1,15 @@
+.form__label {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 9px;
+  color: #999999;
+  margin-top: 16px;
+  display: block;
+}
+
+.form__label:first-of-type {
+  height: initial;
+  margin-top: 0;
+}

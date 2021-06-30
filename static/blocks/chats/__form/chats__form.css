@@ -1,0 +1,10 @@
+.chats__form {
+  width: 100%;
+  height: 32px;
+  background: #efefef;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}

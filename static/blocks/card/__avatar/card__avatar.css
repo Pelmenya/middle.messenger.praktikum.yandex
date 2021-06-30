@@ -1,0 +1,9 @@
+.card__avatar {
+  height: 47px;
+  width: 47px;
+  background-color: #efefef;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  margin-right: 10px;
+}

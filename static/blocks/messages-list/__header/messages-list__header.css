@@ -1,0 +1,9 @@
+.messages-list__header {
+  width: calc(100% - 40px);
+  height: 54px;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}

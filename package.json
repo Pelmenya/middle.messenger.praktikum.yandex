@@ -1,0 +1,32 @@
+{
+  "name": "mf.messenger.praktikum.yandex",
+  "version": "1.0.0",
+  "description": "Web application Chat",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "tsc --project ./tsconfig.json --watch",
+    "build-net": "tsc --build tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pelmenya/mf.messenger.praktikum.yandex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pelmenya/mf.messenger.praktikum.yandex/issues"
+  },
+  "homepage": "https://github.com/Pelmenya/mf.messenger.praktikum.yandex#readme",
+  "devDependencies": {
+    "express": "4.17.1",
+    "postcss": "^8.2.9",
+    "postcss-cli": "^8.3.1",
+    "ts-node": "9.1.1",
+    "typescript": "4.1.5"
+  },
+  "dependencies": {
+    "@types/lodash": "4.14.168"
+  }
+}

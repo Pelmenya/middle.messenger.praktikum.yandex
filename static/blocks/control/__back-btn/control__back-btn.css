@@ -1,0 +1,16 @@
+.control__back-btn {
+  outline-style: none;
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+  display: block;
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='14' cy='14' r='14' transform='rotate(-180 14 14)' fill='%233369F3'/%3E%3Crect x='20' y='14.8' width='11' height='1.6' transform='rotate(-180 20 14.8)' fill='white'/%3E%3Cpath d='M13 19L9 14L13 9' stroke='white' stroke-width='1.6'/%3E%3C/svg%3E");
+}
+
+.control__back-btn:active,
+.control__back-btn:focus {
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='14' cy='14' r='14' transform='rotate(-180 14 14)' fill='%23FF2F2F'/%3E%3Crect x='20' y='14.8' width='11' height='1.6' transform='rotate(-180 20 14.8)' fill='white'/%3E%3Cpath d='M13 19L9 14L13 9' stroke='white' stroke-width='1.6'/%3E%3C/svg%3E");
+}

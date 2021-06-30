@@ -1,0 +1,16 @@
+@import url(./__header/chats__header.css);
+@import url(./__link/chats__link.css);
+@import url(./__nav/chats__nav.css);
+@import url(./__nav-btn/chats__nav-btn.css);
+@import url(./__search/chats__search.css);
+@import url(./__link-text/chats__link-text.css);
+@import url(./__create-chat/chats__create-chat.css);
+@import url(./__icon-angle-right/chats__icon-angle-right.css);
+@import url(./__form/chats__form.css);
+@import url(./__search-placeholder/chats__search-placeholder.css);
+
+.chats {
+  flex-direction: column;
+  width: 25%;
+  border-right: 1px solid #eaeaea; 
+}

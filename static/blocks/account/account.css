@@ -1,0 +1,33 @@
+@import url(./__data/account__data.css);
+@import url(./__data/_is-opened/account__data_is-opened.css);
+@import url(./__avatar/account__avatar.css);
+@import url(./__avatar-overlay/account__avatar-overlay.css);
+@import url(./__edit-btn/account__edit-btn.css);
+@import url(./__edit-btn/_log-out/account__edit-btn_log-out.css);
+@import url(./__form/account__form.css);
+@import url(./__form/_password/account__form_password.css);
+@import url(./__input/account__input.css);
+@import url(./__label/account__label.css);
+@import url(./__wrap-row/account__wrap-row.css);
+@import url(./__wrap-col/account__wrap-col.css);
+@import url(./__wrap-row/_avatar/account__wrap-row_avatar.css);
+@import url(./__name/account__name.css);
+@import url(./__spliter/account__spliter.css);
+@import url(./__menu/account__menu.css);
+@import url(./__save-password/account__save-password.css);
+@import url(./__save-data/account__save-data.css);
+@import url(./__avatar-text/account__avatar-text.css);
+
+
+.account {
+  width: calc(100% - 64px);
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  color: #1e1e1e;
+}

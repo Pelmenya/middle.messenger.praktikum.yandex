@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./static/dist",
+    "target": "es2017",
+    "declaration": false,
+    "module": "esNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "allowUmdGlobalAccess": true,
+  },
+ "include": [
+    "./static/**/*"
+  ],
+} 

@@ -1,0 +1,10 @@
+.form__error_account {
+  margin: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.form__error_account:last-of-type {
+  margin: 0;
+}

@@ -1,0 +1,16 @@
+.chats__nav-btn {
+  font-family: Inter, sans-serif;
+  background-color: transparent;
+  border-radius: 8px;
+  outline-style: none;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+  color: #999;
+  border: none;
+  cursor: pointer;
+  display: flex;
+}

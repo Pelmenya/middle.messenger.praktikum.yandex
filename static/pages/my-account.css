@@ -1,0 +1,12 @@
+@import url(./all.css);
+@import url(../blocks/body/body.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/input/input.css);
+@import url(../blocks/menu/menu.css);
+@import url(../blocks/sidebar/sidebar.css);
+@import url(../blocks/control/control.css);
+@import url(../blocks/form/form.css);
+@import url(../blocks/account/account.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/form-window/form-window.css);
+

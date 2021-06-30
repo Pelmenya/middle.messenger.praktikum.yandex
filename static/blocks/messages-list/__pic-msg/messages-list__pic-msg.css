@@ -1,0 +1,14 @@
+.messages-list__pic-msg {
+  display: block;
+  width: 316px;
+  height: 210px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background-color: transparent;
+  border: 1px solid #eaeaea;
+  position: relative;
+  background-image: url(../../../images/camera.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}

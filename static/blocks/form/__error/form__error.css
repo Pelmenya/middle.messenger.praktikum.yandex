@@ -1,0 +1,17 @@
+.form__error {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 8px;
+  color: #ff2f2f;
+  margin-top: 8px;
+  display: block;
+  display: none;
+}
+
+.form__error:last-of-type {
+  display: block;
+  display: none;
+  margin-bottom: 50px;
+}

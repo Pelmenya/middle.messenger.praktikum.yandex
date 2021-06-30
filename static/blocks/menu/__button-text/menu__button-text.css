@@ -1,0 +1,9 @@
+.menu__button-text {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #1e1e1e;
+  display: block;
+}

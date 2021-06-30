@@ -1,0 +1,7 @@
+@import url(./__back-btn/control__back-btn.css);
+
+.control {
+  align-items: center;  
+  padding-left: 18px;
+  padding-right: 18px;
+}

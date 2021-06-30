@@ -1,0 +1,25 @@
+@import url(./__number-message/card__number-message.css);
+@import url(./__avatar/card__avatar.css);
+@import url(./__text/card__text.css);
+@import url(./__time/card__time.css);
+@import url(./__name/card__name.css);
+@import url(./__trash/card__trash.css);
+@import url(./__wrap-col/card__wrap-col.css);
+@import url(./__wrap-row/card__wrap-row.css);
+@import url(./__person/card__person.css);
+@import url(./__number-message-text/card__number-message-text.css);
+@import url(./__info/card__info.css);
+@import url(./__active/card__active.css);
+
+.card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.card:focus {
+  background-color: #e4edfd;
+  outline: none;
+}

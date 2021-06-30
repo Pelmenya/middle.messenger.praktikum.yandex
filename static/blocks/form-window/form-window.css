@@ -1,0 +1,20 @@
+@import url(./__content/form-window__content.css);
+@import url(./__content/_login/form-window__content_login.css);
+@import url(./__content/_popup/form-window__content_popup.css);
+@import url(./__content/_menu/form-window__content_menu.css);
+@import url(./__title/form-window__title.css);
+@import url(./__title/_popup/form-window__title_popup.css);
+@import url(./__title/_popup/form-window__title_popup_red.css);
+@import url(./__absolute/form-window__absolute.css);
+@import url(./_popup/form-window_popup.css);
+@import url(./_messages-list-header/form-window_messages-list-header.css);
+@import url(./_is-opened/form-window_is-opened.css);
+
+
+.form-window {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  display: none;
+}
+
