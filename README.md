@@ -1,6 +1,6 @@
 # Проектная работа №3
 
-«[Сайт проекта Messanger на Netlify](https://trusting-elion-30443a.netlify.app)»
+«[Сайт проекта Messanger на Netlify](zealous-tesla-6da545)»
 
 ##  Тема: "Разработка приложения Чат"
 

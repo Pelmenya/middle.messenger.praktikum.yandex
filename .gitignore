@@ -2,6 +2,7 @@
 
 # compiled output
 /static/dist
+/bundle
 /dist
 /tmp
 /out-tsc
@@ -96,3 +97,4 @@ node_modules
 storybook-static
 .loki
 .cache
+.parcel-cache
