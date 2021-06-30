@@ -1,6 +1,6 @@
-import Button from "../../../blocks/button/Button.js";
-import MyAccountAvatar from "../../template-parts/my-account/MyAccountAvatar.js";
-import MyAccountPassword from "../../template-parts/my-account/MyAccountPassword.js";
+import Button from "../../../blocks/button/Button";
+import MyAccountAvatar from "../../template-parts/my-account/MyAccountAvatar";
+import MyAccountPassword from "../../template-parts/my-account/MyAccountPassword";
 
 export const myAccountPasswordProps = {
   tagNameBlock: "main",

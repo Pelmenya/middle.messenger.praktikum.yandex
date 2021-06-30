@@ -1,8 +1,8 @@
-import Form from "../../../../../blocks/form/Form.js";
-import { ROUTES } from "../../../../const/routes.js";
-import { Nullable } from "../../../../types/Nullable.js";
-import Router from "../../../classes/Router.js";
-import handlerSignInSubmit from "../submits/handlerSignInSubmit.js";
+import Form from "../../../../../blocks/form/Form";
+import { ROUTES } from "../../../../const/routes";
+import { Nullable } from "../../../../types/Nullable";
+import Router from "../../../classes/Router";
+import handlerSignInSubmit from "../submits/handlerSignInSubmit";
 
 export function handlerSignInPage(router: Router): void {
   const formContainer: Nullable<HTMLFormElement> = document.querySelector(".form__signin");

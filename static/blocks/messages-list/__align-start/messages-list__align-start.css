@@ -5,6 +5,7 @@
   margin-top: 10px;
 }
 
-.messages-list__align-start:first-of-type {
+.messages-list__align-start:last-of-type {
   margin-top: 30px;
+  margin-bottom: 30px;
 }

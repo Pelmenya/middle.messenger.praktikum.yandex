@@ -1,12 +1,12 @@
-import { MESSAGES } from "../../../../const/messages.js";
-import { currentUser } from "../../../../const/objects/currentUser.js";
-import { Options } from "../../../../types/Options.js";
-import { usersAPI } from "../../../api/UsersAPI.js";
-import getCurrentUser from "../../getCurrentUser.js";
+import { MESSAGES } from "../../../../const/messages";
+import { currentUser } from "../../../../const/objects/currentUser";
+import { Options } from "../../../../types/Options";
+import { usersAPI } from "../../../api/UsersAPI";
+import getCurrentUser from "../../getCurrentUser";
 
 export default function handlerEditUserDataSubmit(options: Options) {
   return usersAPI.putUserProfile(options).then((data) => {
-    if (data.status === 200) {
+    if (data.status >= 200 && data.status <= 299) {
       getCurrentUser().then((data) => {
         if (data !== null) {
           Object.assign(currentUser, data);

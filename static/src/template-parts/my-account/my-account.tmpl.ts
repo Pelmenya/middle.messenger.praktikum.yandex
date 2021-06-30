@@ -1,4 +1,4 @@
-import { Template } from "../../types/Template.js";
+import { Template } from "../../types/Template";
 
 export const myAccount: Template = {
   tmpl:

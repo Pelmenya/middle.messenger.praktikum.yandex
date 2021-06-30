@@ -1,6 +1,6 @@
-import { Template } from "../../types/Template.js";
+import { Template } from "../../types/Template";
 
-export const chats: Template = {
+export const chatsPage: Template = {
   tmpl:
     '<div class="body__container body__container_is-opened">\
       <h1 hidden>Чат для общения</h1>\

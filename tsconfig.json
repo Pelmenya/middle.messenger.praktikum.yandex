@@ -11,9 +11,7 @@
     "noUnusedParameters": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "allowUmdGlobalAccess": true,
   },
- "include": [
-    "./static/**/*"
-  ],
+  
+  "include": ["./static/**/*"]
 } 

@@ -1,18 +1,21 @@
-import queryString from "../functions/getString.js";
-import { METHOD } from "../../const/methods.js";
-import { Options } from "../../types/Options.js";
+import queryString from "../functions/getString";
+import { METHOD } from "../../const/methods";
+import { Options } from "../../types/Options";
 
 type OptionsWithoutMethod = Omit<Options, "method">;
 
 export default class HTTPTransport {
-  public baseUrl: string;
+  private baseUrl: string;
 
-  constructor(url: string = "") {
+  constructor(url: string) {
     this.baseUrl = url;
   }
 
   get(url: string, options: OptionsWithoutMethod = {}): Promise<XMLHttpRequest> {
-    return this.request(url, { ...options, method: METHOD.GET });
+    const { data } = options;
+    if (data)
+      return this.request(`${url}?${queryString(data)}`, { ...options, method: METHOD.GET });
+    else return this.request(url, { ...options, method: METHOD.GET });
   }
 
   post(url: string, options: Options): Promise<XMLHttpRequest> {
@@ -28,16 +31,17 @@ export default class HTTPTransport {
   }
 
   request(url: string, options: Options = { method: METHOD.GET }): Promise<XMLHttpRequest> {
-    const { method, data = {} } = options;
+    const { method, data = {}, id = undefined } = options;
 
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
       xhr.withCredentials = true;
+      
+      if (id === undefined) {
+        xhr.open(method, `${this.baseUrl}${url}`);
+      } else xhr.open(method, `${this.baseUrl}${url}/${String(id)}`);
 
-      if (method === METHOD.GET) xhr.open(method, `${this.baseUrl}${url}${queryString(data)}`);
-      else xhr.open(method, `${this.baseUrl}${url}`);
-
-      xhr.onload = function() {
+      xhr.onload = () => {
         resolve(xhr);
       };
 

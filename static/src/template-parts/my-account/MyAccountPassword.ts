@@ -1,9 +1,10 @@
-import Form from "../../../blocks/form/Form.js";
-import BlockProps from "../../types/BlockProps.js";
-import { Nullable } from "../../types/Nullable.js";
-import Block from "../../utils/classes/Block.js";
-import handlerEditUserPasswordSubmit from "../../utils/functions/handlers/submits/handlerEditUserPassword.js";
-import { myAccountPassword } from "./my-account-password.tmpl.js";
+import Form from "../../../blocks/form/Form";
+import BlockProps from "../../types/BlockProps";
+import { Nullable } from "../../types/Nullable";
+import Block from "../../utils/classes/Block";
+import handlerEditUserPasswordSubmit from "../../utils/functions/handlers/submits/handlerEditUserPassword";
+import { myAccountPassword } from "./my-account-password.tmpl";
+import _ from "lodash";
 
 interface MyAccountPasswordProps extends BlockProps {
   oldPassword: string;

@@ -1,6 +1,7 @@
-import BlockProps from "../../types/BlockProps.js";
-import Block from "../../utils/classes/Block.js";
-import { err } from "../../template-parts/error.tmpl.js";
+import BlockProps from "../../types/BlockProps";
+import Block from "../../utils/classes/Block";
+import { err } from "../../template-parts/error.tmpl";
+import _ from "lodash";
 
 interface ErrorPageProps extends BlockProps {
   title: string;

@@ -1,21 +1,25 @@
-import { currentUser } from "../const/objects/currentUser.js";
-import { ROUTES } from "../const/routes.js";
-import { router } from "../utils/classes/Router.js";
-import getCurrentUser from "../utils/functions/getCurrentUser.js";
-import getDataFromStore from "../utils/functions/getDataFromStrore.js";
-import getUrlRoute from "../utils/functions/getUrlRoute.js";
-import renderChats from "../utils/functions/renderChats.js";
-import setEditPasswordFields from "../utils/functions/setEditPasswordFields.js";
-import setEditUserFields from "../utils/functions/setEditUserFields.js";
-import setUserFields from "../utils/functions/setUserFields.js";
-import { store } from "../utils/store/storeObj.js";
-import ChatsPage from "./classes/ChatsPage.js";
-import ErrorPage from "./classes/ErrorPage.js";
-import MyAccountDataPage from "./classes/MyAccountDataPage.js";
-import MyAccountPage from "./classes/MyAccountPage.js";
-import MyAccountPasswordPage from "./classes/MyAccountPasswordPage.js";
-import SignInPage from "./classes/SignInPage.js";
-import SignUpPage from "./classes/SignUpPage.js";
+import { currentUser } from "../const/objects/currentUser";
+import { ROUTES } from "../const/routes";
+import getCurrentUser from "../utils/functions/getCurrentUser";
+import getDataFromStore from "../utils/functions/getDataFromStrore";
+import getUrlRoute from "../utils/functions/getUrlRoute";
+import renderChats from "../utils/functions/renderChats";
+import setEditPasswordFields from "../utils/functions/setEditPasswordFields";
+import setEditUserFields from "../utils/functions/setEditUserFields";
+import setUserFields from "../utils/functions/setUserFields";
+import ChatsPage from "./classes/ChatsPage";
+import ErrorPage from "./classes/ErrorPage";
+import MyAccountDataPage from "./classes/MyAccountDataPage";
+import MyAccountPage from "./classes/MyAccountPage";
+import MyAccountPasswordPage from "./classes/MyAccountPasswordPage";
+import SignInPage from "./classes/SignInPage";
+import SignUpPage from "./classes/SignUpPage";
+import { router } from "../const/objects/router";
+
+import "pages-css/index.css";
+import "pages-css/chat.css";
+import "pages-css/error-page.css";
+import "pages-css/my-account.css";
 
 router
   .use(ROUTES.SIGNIN, SignInPage, getDataFromStore("signInProps"))
@@ -65,6 +69,4 @@ getCurrentUser()
     else if (routeUrl === ROUTES.SIGNUP) router.go(ROUTES.SIGNUP);
     else router.go(ROUTES.ERROR);
   })
-  .catch((err) => console.log(err));
-
-console.log(store);
+  .catch((err) => alert(err));

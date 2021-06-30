@@ -1,6 +1,7 @@
-import BlockProps from "../../src/types/BlockProps.js";
-import Block from "../../src/utils/classes/Block.js";
-import { button } from "./button.tmpl.js";
+import BlockProps from "../../src/types/BlockProps";
+import Block from "../../src/utils/classes/Block";
+import { button } from "./button.tmpl";
+import _ from "lodash";
 
 interface ButtonProps extends BlockProps {
   name: string;

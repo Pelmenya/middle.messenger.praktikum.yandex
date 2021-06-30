@@ -1,20 +1,24 @@
-import Popup from "../../../../../blocks/popup/Popup.js";
-import { ERRORS_SERVER } from "../../../../const/errorsServer.js";
-import { Options } from "../../../../types/Options.js";
-import { chatsAPI } from "../../../api/ChatsAPI.js";
-import { usersAPI } from "../../../api/UsersAPI.js";
-import { store } from "../../../store/storeObj.js";
-import getDataFromStore from "../../getDataFromStrore.js";
-import getElementFromStore from "../../getElementFromStore.js";
+import Popup from "../../../../../blocks/popup/Popup";
+import { ERRORS_SERVER } from "../../../../const/errorsServer";
+import { Options } from "../../../../types/Options";
+import { chatsAPI } from "../../../api/ChatsAPI";
+import { usersAPI } from "../../../api/UsersAPI";
+import { store } from "../../../store/storeObj";
+import getDataFromStore from "../../getDataFromStrore";
+import getElementFromStore from "../../getElementFromStore";
 
 export default function handlerRemoveUserSubmit(options: Options) {
   return usersAPI
     .searchUser(options)
     .then((data) => {
-      if (data.status === 200) {
+      if (data.status >= 200 && data.status <= 299) {
         const res = JSON.parse(data.response);
         if (res.length > 0) {
-          const removeUserPopupElement: Popup = getElementFromStore(store, "chatsProps", "remove_user");
+          const removeUserPopupElement: Popup = getElementFromStore(
+            store,
+            "chatsProps",
+            "remove_user"
+          );
           const currentChatId = getDataFromStore("chatsSelectedProps").block.props.chatId;
           if (currentChatId !== 0) {
             const formData = {
@@ -28,11 +32,11 @@ export default function handlerRemoveUserSubmit(options: Options) {
             chatsAPI
               .removeUserFromChat(formData)
               .then((data) => {
-                if (data.status === 200) {
+                if (data.status >= 200 && data.status <= 299) {
                   if (removeUserPopupElement !== null) removeUserPopupElement.hide();
                 } else return ERRORS_SERVER.ERROR_REMOVE_USER;
               })
-              .catch((err) => console.log(err));
+              .catch((err) => alert(err));
           }
         } else return ERRORS_SERVER.ERROR_SEARCH_USER;
       } else {
@@ -40,5 +44,5 @@ export default function handlerRemoveUserSubmit(options: Options) {
         return obj.reason;
       }
     })
-    .catch((err) => console.log(err));
+    .catch((err) => alert(err));
 }
