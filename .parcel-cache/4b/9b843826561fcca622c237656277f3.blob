@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ROUTES = void 0;
+var ROUTES;
+exports.ROUTES = ROUTES;
+(function (ROUTES) {
+  ROUTES["SIGNIN"] = "/";
+  ROUTES["SIGNUP"] = "/#signup";
+  ROUTES["ERROR"] = "/#error";
+  ROUTES["CHATS"] = "/#chats";
+  ROUTES["MY_ACCOUNT"] = "/#my-account";
+  ROUTES["MY_ACCOUNT_PASSWORD"] = "/#my-account-password";
+  ROUTES["MY_ACCOUNT_DATA"] = "/#my-account-data";
+})(ROUTES || (exports.ROUTES = ROUTES = {}));

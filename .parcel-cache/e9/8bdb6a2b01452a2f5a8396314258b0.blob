@@ -1,0 +1,4 @@
+.account__save-password {
+  margin-top: 160px;
+  min-width: 280px;
+}

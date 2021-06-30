@@ -1,0 +1,9 @@
+.messages-list__name {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 13px;
+  color: #1e1e1e;
+  margin: 0;
+}

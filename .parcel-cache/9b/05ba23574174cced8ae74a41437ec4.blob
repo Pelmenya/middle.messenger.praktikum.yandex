@@ -1,0 +1,84 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _getString = _interopRequireDefault(require("../functions/getString"));
+var _methods = require("../../const/methods");
+var HTTPTransport = /*#__PURE__*/(function () {
+  function HTTPTransport(url) {
+    (0, _classCallCheck2["default"])(this, HTTPTransport);
+    this.baseUrl = url;
+  }
+  (0, _createClass2["default"])(HTTPTransport, [{
+    key: "get",
+    value: function get(url) {
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var data = options.data;
+      if (data) return this.request(("").concat(url, "?").concat((0, _getString["default"])(data)), Object.assign(Object.assign({}, options), {
+        method: _methods.METHOD.GET
+      })); else return this.request(url, Object.assign(Object.assign({}, options), {
+        method: _methods.METHOD.GET
+      }));
+    }
+  }, {
+    key: "post",
+    value: function post(url, options) {
+      return this.request(url, Object.assign(Object.assign({}, options), {
+        method: _methods.METHOD.POST
+      }));
+    }
+  }, {
+    key: "put",
+    value: function put(url, options) {
+      return this.request(url, Object.assign(Object.assign({}, options), {
+        method: _methods.METHOD.PUT
+      }));
+    }
+  }, {
+    key: "delete",
+    value: function _delete(url, options) {
+      return this.request(url, Object.assign(Object.assign({}, options), {
+        method: _methods.METHOD.DELETE
+      }));
+    }
+  }, {
+    key: "request",
+    value: function request(url) {
+      var _this = this;
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+        method: _methods.METHOD.GET
+      };
+      var method = options.method, _options$data = options.data, data = _options$data === void 0 ? {} : _options$data, _options$id = options.id, id = _options$id === void 0 ? undefined : _options$id;
+      return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        if (id === undefined) {
+          xhr.open(method, ("").concat(_this.baseUrl).concat(url));
+        } else xhr.open(method, ("").concat(_this.baseUrl).concat(url, "/").concat(String(id)));
+        xhr.onload = function () {
+          resolve(xhr);
+        };
+        xhr.onabort = reject;
+        xhr.onerror = reject;
+        xhr.ontimeout = reject;
+        if (method === _methods.METHOD.GET || !data) {
+          xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+          xhr.send();
+        } else {
+          if (data instanceof FormData) {
+            xhr.send(data);
+          } else {
+            xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+            xhr.send(JSON.stringify(data));
+          }
+        }
+      });
+    }
+  }]);
+  return HTTPTransport;
+})();
+exports["default"] = HTTPTransport;

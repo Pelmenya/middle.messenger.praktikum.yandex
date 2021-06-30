@@ -1,0 +1,7 @@
+.messages-list__text_info {
+  line-height: 12px;
+  text-align: center;
+  color: #999999;
+  display: block;
+  width: 100%;
+}

@@ -1,0 +1,13 @@
+.form__error_server{
+  display: block;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.form__error_server:last-of-type{
+  display: block;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 5px;
+}

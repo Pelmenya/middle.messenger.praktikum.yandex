@@ -1,0 +1,14 @@
+.card__number-message {
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  color: #fff;
+  background-color: #3369f3;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+}

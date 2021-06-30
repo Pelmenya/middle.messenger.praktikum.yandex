@@ -1,6 +1,6 @@
 # Проектная работа №3
 
-«[Ссылка на PullRequest](https://github.com/Pelmenya/middle.messenger.praktikum.yandex/pull/1)»
+«[Ссылка на PullRequest](https://github.com/Pelmenya/middle.messenger.praktikum.yandex/pull/3)»
 
 ##  Тема: "Разработка приложения Чат"
 

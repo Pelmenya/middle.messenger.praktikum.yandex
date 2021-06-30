@@ -1,0 +1,5 @@
+.card__wrap-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

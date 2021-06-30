@@ -1,0 +1,6 @@
+.form__wrap_data {
+  flex-direction: row;
+  height: 122px;
+  align-items: center;
+  width: initial;
+}

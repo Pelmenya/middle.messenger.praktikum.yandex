@@ -1,0 +1,15 @@
+.account__input {
+  width: 50%;
+  text-align: end;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+}
+
+.account__input:disabled {
+  background-color: transparent;
+  color: #999;
+}
+
+
+

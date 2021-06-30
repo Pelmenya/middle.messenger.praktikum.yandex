@@ -1,0 +1,10 @@
+.menu__button-icon_cross {
+  color: #3369f3;
+}
+
+.menu__button-icon_cross::before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f057";
+  line-height: 22px;
+  font-size: 22px;
+}

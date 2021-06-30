@@ -1,0 +1,71 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+var _myAccount = require("../../template-parts/my-account/my-account.tmpl");
+var _Block2 = _interopRequireDefault(require("../../utils/classes/Block"));
+var _renderChats = _interopRequireDefault(require("../../utils/functions/renderChats"));
+var _lodash = _interopRequireDefault(require("lodash"));
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
+  return function _createSuperInternal() {
+    var Super = (0, _getPrototypeOf2["default"])(Derived), result;
+    if (hasNativeReflectConstruct) {
+      var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor;
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+    return (0, _possibleConstructorReturn2["default"])(this, result);
+  };
+}
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+  try {
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+var MyAccountPage = /*#__PURE__*/(function (_Block) {
+  (0, _inherits2["default"])(MyAccountPage, _Block);
+  var _super = _createSuper(MyAccountPage);
+  function MyAccountPage(props) {
+    var _this;
+    (0, _classCallCheck2["default"])(this, MyAccountPage);
+    _this = _super.call(this, props);
+    _this.create();
+    return _this;
+  }
+  (0, _createClass2["default"])(MyAccountPage, [{
+    key: "create",
+    value: function create() {
+      this.addListeners();
+    }
+  }, {
+    key: "addListeners",
+    value: function addListeners() {
+      if (this.element !== null) {
+        var controlBackBtn = this.element.querySelector(".control__back-btn");
+        if (controlBackBtn !== null) controlBackBtn.addEventListener("click", _renderChats["default"]);
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _lodash["default"].template(_myAccount.myAccount.tmpl)(this.props);
+    }
+  }]);
+  return MyAccountPage;
+})(_Block2["default"]);
+exports["default"] = MyAccountPage;

@@ -1,0 +1,19 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = setEditUserFields;
+var _storeObj = require("../store/storeObj");
+var _getDataFromStrore = _interopRequireDefault(require("./getDataFromStrore"));
+var _getElementFromStore = _interopRequireDefault(require("./getElementFromStore"));
+var _setAvatarField = _interopRequireDefault(require("./setAvatarField"));
+function setEditUserFields() {
+  (0, _setAvatarField["default"])("myAccountDataProps");
+  (0, _setAvatarField["default"])("myAccountDataProps");
+  var userData = (0, _getElementFromStore["default"])(_storeObj.store, "myAccountDataProps", "userDataFields");
+  userData.setProps({
+    currentUserProps: (0, _getDataFromStrore["default"])("currentUser")
+  });
+  userData.create();
+}

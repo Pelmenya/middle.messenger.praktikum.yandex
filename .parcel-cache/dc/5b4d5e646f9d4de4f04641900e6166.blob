@@ -1,0 +1,5 @@
+.chats {
+  flex-direction: column;
+  width: 25%;
+  border-right: 1px solid #eaeaea; 
+}

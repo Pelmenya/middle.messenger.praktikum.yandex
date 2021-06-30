@@ -1,0 +1,3 @@
+.card__active {
+  background-color: #e4edfd;
+}

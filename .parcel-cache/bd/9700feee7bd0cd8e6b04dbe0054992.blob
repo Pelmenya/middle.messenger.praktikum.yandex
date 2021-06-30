@@ -1,0 +1,61 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.controller = exports["default"] = void 0;
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _currentUser = require("../../const/objects/currentUser");
+var _signInProps = require("../../const/objects/signInProps");
+var _signUpProps = require("../../const/objects/signUpProps");
+var _storeObj = require("../store/storeObj");
+var _chatsProps = require("../../const/objects/chatsProps");
+var _errorProps = require("../../const/objects/errorProps");
+var _chatsSelectedProps = require("../../const/objects/chatsSelectedProps");
+var _myAccountProps = require("../../const/objects/myAccountProps");
+var _myAccountDataProps = require("../../const/objects/myAccountDataProps");
+var _myAccountPasswordProps = require("../../const/objects/myAccountPasswordProps");
+var Controller = /*#__PURE__*/(function () {
+  function Controller() {
+    var _this = this;
+    (0, _classCallCheck2["default"])(this, Controller);
+    this.setSignInProps = function () {
+      _this.putToStore(_storeObj.store, _signInProps.signInProps, "signInProps");
+    };
+    this.setSignUpProps = function () {
+      _this.putToStore(_storeObj.store, _signUpProps.signUpProps, "signUpProps");
+    };
+    this.setChatsProps = function () {
+      _this.putToStore(_storeObj.store, _chatsProps.chatsProps, "chatsProps");
+    };
+    this.setErrorProps = function () {
+      _this.putToStore(_storeObj.store, _errorProps.errorProps, "errorProps");
+    };
+    this.setChatsSelectedProps = function () {
+      _this.putToStore(_storeObj.store, _chatsSelectedProps.chatsSelectedProps, "chatsSelectedProps");
+    };
+    this.setMyAccountProps = function () {
+      _this.putToStore(_storeObj.store, _myAccountProps.myAccountProps, "myAccountProps");
+    };
+    this.setMyAccountDataProps = function () {
+      _this.putToStore(_storeObj.store, _myAccountDataProps.myAccountDataProps, "myAccountDataProps");
+    };
+    this.setMyAccountPasswordProps = function () {
+      _this.putToStore(_storeObj.store, _myAccountPasswordProps.myAccountPasswordProps, "myAccountPasswordProps");
+    };
+    this.setCurrentUserProps = function () {
+      _this.putToStore(_storeObj.store, _currentUser.currentUser, "currentUser");
+    };
+  }
+  (0, _createClass2["default"])(Controller, [{
+    key: "putToStore",
+    value: function putToStore(store, obj, key) {
+      store.objects[key] = obj;
+    }
+  }]);
+  return Controller;
+})();
+exports["default"] = Controller;
+var controller = new Controller();
+exports.controller = controller;

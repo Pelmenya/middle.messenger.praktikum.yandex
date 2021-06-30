@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ERRORS_SERVER = void 0;
+var ERRORS_SERVER;
+exports.ERRORS_SERVER = ERRORS_SERVER;
+(function (ERRORS_SERVER) {
+  ERRORS_SERVER["ERROR_SEARCH_USER"] = "Пользователя нет в системе";
+  ERRORS_SERVER["ERROR_ADD_USER"] = "Не удалось добавить пользователя в чат";
+  ERRORS_SERVER["ERROR_REMOVE_USER"] = "Не удалось удалить пользователя из чата";
+})(ERRORS_SERVER || (exports.ERRORS_SERVER = ERRORS_SERVER = {}));

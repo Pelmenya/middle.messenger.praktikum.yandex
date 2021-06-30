@@ -1,0 +1,28 @@
+.messages-list__add-resource {
+  color: #999;
+}
+
+.messages-list__add-resource::before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f0c6";
+  font-size: 28px;
+  line-height: 28px;
+  font-weight: 300;
+}
+
+.messages-list__add-resource {
+  color: #999;
+}
+
+.messages-list__add-resource:focus,
+.messages-list__add-resource:active {
+  color: #3369f3;
+}
+
+.messages-list__add-resource:focus + .form-window_messages-list-send {
+  display: flex;
+  top: -105px;
+  left: -10px;
+  z-index: 5;
+  cursor: pointer;
+}

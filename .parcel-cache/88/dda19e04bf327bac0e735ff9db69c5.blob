@@ -1,0 +1,18 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = setAvatarField;
+var _currentUser = require("../../const/objects/currentUser");
+var _urlsAPI = require("../../const/urlsAPI");
+var _storeObj = require("../store/storeObj");
+var _getElementFromStore = _interopRequireDefault(require("./getElementFromStore"));
+function setAvatarField(pageProps) {
+  var avatar = (0, _getElementFromStore["default"])(_storeObj.store, pageProps, "avatarField");
+  if (_currentUser.currentUser.avatar !== null) avatar.setProps({
+    avatar: ("").concat(_urlsAPI.URLS_API.BASE).concat(_urlsAPI.URLS_API.RESOURCES).concat(_currentUser.currentUser.avatar),
+    display: "flex"
+  });
+  avatar.create();
+}

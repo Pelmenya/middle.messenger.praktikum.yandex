@@ -1,0 +1,3 @@
+.messages-list__text_time {
+   margin-top: 48px; 
+}

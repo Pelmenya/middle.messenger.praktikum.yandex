@@ -1,0 +1,25 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = handlerSignInSubmit;
+var _currentUser = require("../../../../const/objects/currentUser");
+var _AuthAPI = require("../../../api/AuthAPI");
+var _getCurrentUser = _interopRequireDefault(require("../../getCurrentUser"));
+var _renderChats = _interopRequireDefault(require("../../renderChats"));
+function handlerSignInSubmit(options) {
+  return _AuthAPI.authAPI.signin(options).then(function (data) {
+    if (data.status >= 200 && data.status <= 299) {
+      (0, _renderChats["default"])();
+      (0, _getCurrentUser["default"])().then(function (data) {
+        if (data !== null) {
+          Object.assign(_currentUser.currentUser, data);
+        }
+      });
+    } else {
+      var obj = JSON.parse(data.response);
+      return obj.reason;
+    }
+  });
+}

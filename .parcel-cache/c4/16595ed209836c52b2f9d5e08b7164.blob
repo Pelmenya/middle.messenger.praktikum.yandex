@@ -1,0 +1,41 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.usersAPI = exports["default"] = void 0;
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _urlsAPI = require("../../const/urlsAPI");
+var _HTTPTransport = _interopRequireDefault(require("../classes/HTTPTransport"));
+var usersAPIInstance = new _HTTPTransport["default"](("").concat(_urlsAPI.URLS_API.BASE).concat(_urlsAPI.URLS_API.USER));
+var UsersAPI = /*#__PURE__*/(function () {
+  function UsersAPI() {
+    (0, _classCallCheck2["default"])(this, UsersAPI);
+  }
+  (0, _createClass2["default"])(UsersAPI, [{
+    key: "searchUser",
+    value: function searchUser(options) {
+      return usersAPIInstance.post(_urlsAPI.URLS_API.SEARCH_USER, options);
+    }
+  }, {
+    key: "putUserProfile",
+    value: function putUserProfile(options) {
+      return usersAPIInstance.put(_urlsAPI.URLS_API.PROFILE, options);
+    }
+  }, {
+    key: "putUserPassword",
+    value: function putUserPassword(options) {
+      return usersAPIInstance.put(_urlsAPI.URLS_API.PASSWORD, options);
+    }
+  }, {
+    key: "putUserAvatar",
+    value: function putUserAvatar(options) {
+      return usersAPIInstance.put(("").concat(_urlsAPI.URLS_API.PROFILE).concat(_urlsAPI.URLS_API.AVATAR), options);
+    }
+  }]);
+  return UsersAPI;
+})();
+exports["default"] = UsersAPI;
+var usersAPI = new UsersAPI();
+exports.usersAPI = usersAPI;

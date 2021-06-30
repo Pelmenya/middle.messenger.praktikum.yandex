@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.TYPE_SOCKET_DATA = void 0;
+var TYPE_SOCKET_DATA;
+exports.TYPE_SOCKET_DATA = TYPE_SOCKET_DATA;
+(function (TYPE_SOCKET_DATA) {
+  TYPE_SOCKET_DATA["GET_OLD"] = "get old";
+  TYPE_SOCKET_DATA["TEXT"] = "message";
+  TYPE_SOCKET_DATA["ERROR"] = "error";
+})(TYPE_SOCKET_DATA || (exports.TYPE_SOCKET_DATA = TYPE_SOCKET_DATA = {}));

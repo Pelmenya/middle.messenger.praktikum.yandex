@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = getDataFromStore;
+var _storeObj = require("../store/storeObj");
+function getDataFromStore(key) {
+  if (_storeObj.store.objects[key] !== null) {
+    return _storeObj.store.objects[key];
+  }
+  return null;
+}

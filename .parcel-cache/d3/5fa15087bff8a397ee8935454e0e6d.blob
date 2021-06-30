@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head><link rel="stylesheet" href="/index.HASH_REF_f4a5b638a11aa37909b9408e0104adef.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="Чат, мессенджер, переписка, передача файлов">
+    <meta name="description" content="Сервис для общения">
+    <meta name="author" content="Dmitry Lyapin">
+    <link rel="shortcut icon" href="/favicon.HASH_REF_4aa060f178a5b3f18ff4b082d823d808.png" type="images/png">
+    <link rel="icon" href="/favicon.HASH_REF_4aa060f178a5b3f18ff4b082d823d808.png" type="images/png">
+    <title>Мессенджер</title>
+  </head>
+  <body>
+    <div class="app"></div>
+    <script src="/index.HASH_REF_4afe860d7b850bfa4982e8bbc94f4588.js"></script>
+  </body>
+</html>

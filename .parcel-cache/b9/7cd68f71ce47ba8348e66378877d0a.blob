@@ -1,0 +1,16 @@
+.form__select-file {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  height: 32px;
+  max-height: 32px;
+  text-align: center;
+  text-decoration-line: underline;
+  max-width: 122px;
+  color: #3369f3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

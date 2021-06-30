@@ -1,0 +1,27 @@
+.chats__search-placeholder {
+  display: block;
+  text-align: center;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: #999999;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 10px;
+  z-index: 0;
+}
+
+.chats__search-placeholder::before {
+  font-size: 12px;
+  line-height: 12px;
+  color: #999999;
+  font-family: "Font Awesome 5 Pro";
+  content: '\f002';
+}
+
+.chats__search:focus + .chats__search-placeholder {
+  display: none;
+}

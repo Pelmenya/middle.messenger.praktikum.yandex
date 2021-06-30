@@ -1,0 +1,3 @@
+.account__label {
+  width: 50%;
+}

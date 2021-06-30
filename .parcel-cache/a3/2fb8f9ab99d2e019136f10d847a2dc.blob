@@ -1,0 +1,6 @@
+.messages-list__form-send {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}

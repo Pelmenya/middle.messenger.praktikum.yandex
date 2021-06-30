@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.EVENTS = void 0;
+var EVENTS;
+exports.EVENTS = EVENTS;
+(function (EVENTS) {
+  EVENTS["INIT"] = "init";
+  EVENTS["FLOW_CDM"] = "flow:component-did-mount";
+  EVENTS["FLOW_CDU"] = "flow:component-did-update";
+  EVENTS["FLOW_CWU"] = "flow:component-will-unmount";
+  EVENTS["FLOW_RENDER"] = "flow:render";
+  EVENTS["FLOW_HANDLER"] = "handler";
+  EVENTS["PUT_STORE"] = "put-store";
+  EVENTS["OPEN_SOCKET"] = "flow:open-socket";
+  EVENTS["CLOSE_SOCKET"] = "flow:close-socket";
+  EVENTS["MESSAGE_SOKET"] = "flow:message-socket";
+  EVENTS["ERROR_SOCKET"] = "flow:error-socket";
+})(EVENTS || (exports.EVENTS = EVENTS = {}));

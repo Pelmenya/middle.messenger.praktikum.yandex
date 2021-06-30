@@ -1,0 +1,97 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+var _Block2 = _interopRequireDefault(require("../../utils/classes/Block"));
+var _routes = require("../../const/routes");
+var _getElementFromStore = _interopRequireDefault(require("../../utils/functions/getElementFromStore"));
+var _storeObj = require("../../utils/store/storeObj");
+var _setUserFields = _interopRequireDefault(require("../../utils/functions/setUserFields"));
+var _chatsPage = require("./chatsPage.tmpl");
+var _clearContainer = _interopRequireDefault(require("../../utils/functions/clearContainer"));
+var _lodash = _interopRequireDefault(require("lodash"));
+var _router = require("../../const/objects/router");
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
+  return function _createSuperInternal() {
+    var Super = (0, _getPrototypeOf2["default"])(Derived), result;
+    if (hasNativeReflectConstruct) {
+      var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor;
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+    return (0, _possibleConstructorReturn2["default"])(this, result);
+  };
+}
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+  try {
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+var ChatsPage = /*#__PURE__*/(function (_Block) {
+  (0, _inherits2["default"])(ChatsPage, _Block);
+  var _super = _createSuper(ChatsPage);
+  function ChatsPage(props) {
+    var _this;
+    (0, _classCallCheck2["default"])(this, ChatsPage);
+    _this = _super.call(this, props);
+    _this.addEventListeners = function () {
+      if (_this.element !== null) {
+        var myAccountBtn = _this.element.querySelector(".chats__nav-btn_my-account");
+        var createChartBtn = _this.element.querySelector(".chats__nav-btn_create");
+        var chatsHeader = _this.element.querySelector(".chats__header");
+        if (chatsHeader !== null) {
+          chatsHeader.addEventListener("click", function (event) {
+            if (event.target instanceof HTMLElement) {
+              var chatNotSelected = (0, _getElementFromStore["default"])(_storeObj.store, "chatsProps", "chatNotSelected");
+              var chatSelected = (0, _getElementFromStore["default"])(_storeObj.store, "chatsProps", "chatSelected");
+              var messagesContainer = chatSelected.element.querySelector(".messages-list__container");
+              (0, _clearContainer["default"])(messagesContainer);
+              chatSelected.hide();
+              chatNotSelected.show();
+            }
+          });
+        }
+        if (createChartBtn !== null) {
+          (0, _getElementFromStore["default"])(_storeObj.store, "chatsProps", "add_chat");
+          createChartBtn.addEventListener("click", function () {
+            var addChatPopupElement = (0, _getElementFromStore["default"])(_storeObj.store, "chatsProps", "add_chat");
+            if (addChatPopupElement !== undefined) {
+              addChatPopupElement.show();
+            }
+          });
+        }
+        if (myAccountBtn !== null) {
+          myAccountBtn.addEventListener("click", function () {
+            (0, _setUserFields["default"])();
+            _router.router.go(_routes.ROUTES.MY_ACCOUNT);
+          });
+        }
+      }
+    };
+    _this.addEventListeners();
+    return _this;
+  }
+  (0, _createClass2["default"])(ChatsPage, [{
+    key: "render",
+    value: function render() {
+      return _lodash["default"].template(_chatsPage.chatsPage.tmpl)(this.props);
+    }
+  }]);
+  return ChatsPage;
+})(_Block2["default"]);
+exports["default"] = ChatsPage;

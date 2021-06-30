@@ -1,0 +1,5 @@
+.account__menu {
+  margin-top: 40px;
+  width: 100%;
+  display: none;
+}

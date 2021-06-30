@@ -1,0 +1,4 @@
+.messages-list__text-msg_you {
+  border-radius: 12px 12px 0 12px;
+  background-color: #e4edfd;
+}

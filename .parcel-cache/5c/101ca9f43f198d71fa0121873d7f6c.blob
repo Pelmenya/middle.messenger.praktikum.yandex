@@ -1,0 +1,69 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+var _Block2 = _interopRequireDefault(require("../../utils/classes/Block"));
+var _getElementFromStore = _interopRequireDefault(require("../../utils/functions/getElementFromStore"));
+var _storeObj = require("../../utils/store/storeObj");
+var _myAccountAvatar = require("./my-account-avatar.tmpl");
+var _lodash = _interopRequireDefault(require("lodash"));
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
+  return function _createSuperInternal() {
+    var Super = (0, _getPrototypeOf2["default"])(Derived), result;
+    if (hasNativeReflectConstruct) {
+      var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor;
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+    return (0, _possibleConstructorReturn2["default"])(this, result);
+  };
+}
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+  try {
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+var MyAccountAvatar = /*#__PURE__*/(function (_Block) {
+  (0, _inherits2["default"])(MyAccountAvatar, _Block);
+  var _super = _createSuper(MyAccountAvatar);
+  function MyAccountAvatar(props) {
+    var _this;
+    (0, _classCallCheck2["default"])(this, MyAccountAvatar);
+    _this = _super.call(this, props);
+    _this.create();
+    return _this;
+  }
+  (0, _createClass2["default"])(MyAccountAvatar, [{
+    key: "create",
+    value: function create() {
+      if (this.element !== null) {
+        var avatar = this.element.querySelector(".account__avatar");
+        if (avatar !== null) avatar.addEventListener("click", function () {
+          (0, _getElementFromStore["default"])(_storeObj.store, "myAccountProps", "popupAvatar").show();
+        });
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _lodash["default"].template(_myAccountAvatar.myAccountAvatar.tmpl)(this.props);
+    }
+  }]);
+  return MyAccountAvatar;
+})(_Block2["default"]);
+exports["default"] = MyAccountAvatar;

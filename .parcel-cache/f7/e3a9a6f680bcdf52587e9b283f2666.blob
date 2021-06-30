@@ -1,0 +1,10 @@
+.messages-list__settings-icon {
+  text-align: center;  
+}
+
+.messages-list__settings-icon::before{
+  font-family: "Font Awesome 5 Pro";
+  font-size: 15px;
+  line-height: 15px;
+  content: "\f39c";
+}

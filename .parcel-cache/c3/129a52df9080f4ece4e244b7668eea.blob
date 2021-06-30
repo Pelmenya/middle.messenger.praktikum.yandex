@@ -1,0 +1,4 @@
+.messages-list__align-center {
+  align-items: center;
+  width: calc(100% - 20px);
+}

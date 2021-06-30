@@ -1,0 +1,11 @@
+.messages-list__text-msg {
+  display: block;
+  max-width: 400px;
+  min-width: 115px;
+  box-sizing: border-box;
+  border-radius: 0 12px 12px 12px;
+  background-color: #f8f8f8;
+  padding: 10px;
+  position: relative;
+  margin: 0;
+}

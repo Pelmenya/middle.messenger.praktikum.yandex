@@ -1,0 +1,4 @@
+.account__wrap-row_avatar {
+  width: initial;
+  height: 100%;
+}

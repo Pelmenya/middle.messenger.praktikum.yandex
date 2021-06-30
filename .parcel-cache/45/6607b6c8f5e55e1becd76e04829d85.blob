@@ -1,0 +1,10 @@
+.card__trash {
+  height: 16px;
+  width: 16px;
+  background-image: url("87f92cd0c899e1d78ff86f413350e51a");
+  cursor: pointer;
+}
+
+.card__trash:hover {
+  background-image: url("e8e17ef2a45bc45974dd3b649a96d749");
+}
