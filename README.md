@@ -1,6 +1,6 @@
 # Проектная работа №3
 
-«[Сайт проекта Messanger на Netlify](zealous-tesla-6da545)»
+«[Ссылка на PullRequest](https://github.com/Pelmenya/middle.messenger.praktikum.yandex/pull/2)»
 
 ##  Тема: "Разработка приложения Чат"
 
