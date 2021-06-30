@@ -1,0 +1,149 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _errors = require("../../src/const/errors");
+var Form = /*#__PURE__*/(function () {
+  function Form(props) {
+    var _this = this;
+    (0, _classCallCheck2["default"])(this, Form);
+    this.handlerInputInput = function (event) {
+      if (event.target instanceof HTMLInputElement) {
+        if (event.target.previousElementSibling !== null) if (_this.inputLabelClass !== undefined) if (event.target.previousElementSibling.classList.contains(_this.inputLabelClass)) if (event.target.value !== "") event.target.previousElementSibling.classList.remove(("").concat(_this.inputLabelClass, "_hidden")); else event.target.previousElementSibling.classList.add(("").concat(_this.inputLabelClass, "_hidden"));
+      }
+    };
+    this.handlerFocusInput = function (event) {
+      _this.setServerError("");
+      if (event.target instanceof HTMLInputElement) {
+        if (event.target.nextElementSibling !== null) if (_this.errorLabelClass !== undefined) if (event.target.nextElementSibling.classList.contains(_this.errorLabelClass)) {
+          event.target.nextElementSibling.classList.remove(("").concat(_this.errorLabelClass, "_is-opened"));
+          event.target.nextElementSibling.textContent = "";
+        }
+      }
+    };
+    this.handlerBlurInput = function (event) {
+      if (event.target instanceof HTMLInputElement) {
+        if (event.target.nextElementSibling !== null) if (_this.errorLabelClass !== undefined) if (event.target.nextElementSibling.classList.contains(_this.errorLabelClass)) {
+          if (!_this.validateInput(event.target, event.target.nextElementSibling)) event.target.nextElementSibling.classList.add(("").concat(_this.errorLabelClass, "_is-opened"));
+        }
+      }
+    };
+    this.handlerSubmitForm = function (event) {
+      event.preventDefault();
+      if (_this.validatePasswords) {
+        if (_this.validatePasswordsFields()) {
+          if (typeof _this.handlerSubmit === "function") {
+            _this.handlerSubmit(_this.getFormData()).then(function (data) {
+              _this.setServerError(data);
+            });
+          }
+        }
+      } else {
+        if (typeof _this.handlerSubmit === "function") _this.handlerSubmit(_this.getFormData()).then(function (data) {
+          _this.setServerError(data);
+        });
+      }
+    };
+    this.errorLabelClass = props.errorLabelClass;
+    if (this.errorLabelClass === undefined) this.errorLabelClass = "form__error";
+    this.inputLabelClass = props.inputLabelClass;
+    if (this.inputLabelClass === undefined) this.inputLabelClass = "form__label";
+    this.form = props.container;
+    this.serverError = this.form.querySelector((".").concat(this.errorLabelClass, "_server"));
+    this.handlerSubmit = props.handlerSubmit;
+    this.inputs = this.form.querySelectorAll(".input");
+    this.validatePasswords = false;
+  }
+  (0, _createClass2["default"])(Form, [{
+    key: "getErrorDescription",
+    value: function getErrorDescription(type) {
+      if (type === "text") return _errors.ERRORS.ERROR_TEXT;
+      if (type === "email") return _errors.ERRORS.ERROR_EMAIL;
+      if (type === "password") return _errors.ERRORS.ERROR_PASSWORD;
+      if (type === "tel") return _errors.ERRORS.ERROR_TEL;
+      return "";
+    }
+  }, {
+    key: "validateInput",
+    value: function validateInput(input, errorLabel) {
+      if (input.value.length === 0) {
+        errorLabel.textContent = _errors.ERRORS.ERROR_REQUIRED_FIELD;
+      } else if (!input.checkValidity()) {
+        errorLabel.textContent = this.getErrorDescription(input.type);
+      } else {
+        errorLabel.textContent = "";
+        return true;
+      }
+      return false;
+    }
+  }, {
+    key: "validatePasswordsFields",
+    value: function validatePasswordsFields() {
+      var _this2 = this;
+      var str = "";
+      var flag = true;
+      var valid = true;
+      Object.keys(this.inputs).forEach(function (item) {
+        var input = _this2.inputs[Number(item)];
+        if (input.type === "password" && input.name !== "oldPassword") {
+          if (input.nextElementSibling !== null) if (_this2.errorLabelClass !== undefined) if (input.nextElementSibling.classList.contains(_this2.errorLabelClass)) {
+            input.nextElementSibling.textContent = "";
+            input.nextElementSibling.classList.remove(("").concat(_this2.errorLabelClass, "_is-opened"));
+          }
+          if (flag) {
+            str = input.value;
+            flag = false;
+          } else if (str !== input.value) {
+            if (input.nextElementSibling !== null) if (_this2.errorLabelClass !== undefined) if (input.nextElementSibling.classList.contains(_this2.errorLabelClass)) {
+              input.nextElementSibling.textContent = _errors.ERRORS.ERROR_PASSWORDS;
+              input.nextElementSibling.classList.add(("").concat(_this2.errorLabelClass, "_is-opened"));
+              valid = false;
+            }
+          }
+        }
+      });
+      return valid;
+    }
+  }, {
+    key: "setServerError",
+    value: function setServerError(data) {
+      if (this.serverError !== null) this.serverError.textContent = data;
+    }
+  }, {
+    key: "getFormData",
+    value: function getFormData() {
+      var _this3 = this;
+      var formData = {
+        data: {}
+      };
+      Object.keys(this.inputs).forEach(function (item) {
+        formData.data[_this3.inputs[Number(item)].name] = _this3.inputs[Number(item)].value;
+      });
+      return formData;
+    }
+  }, {
+    key: "create",
+    value: function create() {
+      var _this4 = this;
+      if (this.inputs !== null) {
+        var countPasswordFields = 0;
+        Object.keys(this.inputs).forEach(function (item) {
+          if (_this4.inputs[Number(item)].type === "password" && _this4.inputs[Number(item)].name !== "oldPassword") countPasswordFields += 1;
+          _this4.inputs[Number(item)].addEventListener("input", _this4.handlerInputInput);
+          _this4.inputs[Number(item)].addEventListener("focus", _this4.handlerFocusInput);
+          _this4.inputs[Number(item)].addEventListener("blur", _this4.handlerBlurInput);
+        });
+        if (countPasswordFields > 1) this.validatePasswords = true;
+      }
+      if (this.form !== null) {
+        this.form.addEventListener("submit", this.handlerSubmitForm);
+      }
+    }
+  }]);
+  return Form;
+})();
+exports["default"] = Form;

@@ -1,0 +1,26 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.handlerSignInPage = handlerSignInPage;
+var _Form = _interopRequireDefault(require("../../../../../blocks/form/Form"));
+var _routes = require("../../../../const/routes");
+var _handlerSignInSubmit = _interopRequireDefault(require("../submits/handlerSignInSubmit"));
+function handlerSignInPage(router) {
+  var formContainer = document.querySelector(".form__signin");
+  if (formContainer !== null) {
+    var form = new _Form["default"]({
+      container: formContainer,
+      handlerSubmit: _handlerSignInSubmit["default"]
+    });
+    form.create();
+    var noAccountBtn = document.querySelector(".form__button-link");
+    if (noAccountBtn !== null) {
+      noAccountBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        router.go(_routes.ROUTES.SIGNUP);
+      });
+    }
+  }
+}

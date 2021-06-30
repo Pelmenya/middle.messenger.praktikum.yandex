@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = getDateOfMessages;
+function getDateOfMessages(str) {
+  var full = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+  var strObj = str.split("-");
+  var year = strObj[0];
+  var month = strObj[1];
+  var day = strObj[2];
+  var objMonth = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+  if (full) return ("").concat(day, " ").concat(objMonth[Number(month) - 1], " ").concat(year, "г."); else return ("").concat(day, " ").concat(objMonth[Number(month) - 1]);
+}

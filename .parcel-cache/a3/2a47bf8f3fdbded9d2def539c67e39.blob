@@ -1,0 +1,8 @@
+
+.chats__icon-angle-right::after {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 300;
+  content: "\f105";
+  font-size: 18px;
+  display: block;
+}

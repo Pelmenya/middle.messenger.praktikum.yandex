@@ -1,0 +1,38 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.signUpProps = void 0;
+var _Button = _interopRequireDefault(require("../../../blocks/button/Button"));
+var _regex = require("../regex");
+var _handlerSignUpPage = require("../../utils/functions/handlers/pages/handlerSignUpPage");
+var _router = require("./router");
+var signUpProps = {
+  tagNameBlock: "main",
+  classListBlock: ["body"],
+  displayBlock: "flex",
+  phone: _regex.PATTERNS.PATTERN_PHONE,
+  email: _regex.PATTERNS.PATTERN_EMAIL,
+  elements: [{
+    query: ".form__wrap_buttons",
+    block: new _Button["default"]({
+      tagNameBlock: "div",
+      name: "submit_btn",
+      text: "Зарегистрироваться",
+      classList: "button"
+    })
+  }, {
+    query: ".form__wrap_buttons",
+    block: new _Button["default"]({
+      tagNameBlock: "div",
+      name: "link",
+      text: "Войти",
+      classList: "form__button-link"
+    })
+  }],
+  handler: function handler() {
+    (0, _handlerSignUpPage.handlerSignUpPage)(_router.router);
+  }
+};
+exports.signUpProps = signUpProps;

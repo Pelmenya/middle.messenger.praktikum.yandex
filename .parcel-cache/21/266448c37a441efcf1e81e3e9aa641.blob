@@ -1,0 +1,11 @@
+.card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.card:focus {
+  background-color: #e4edfd;
+  outline: none;
+}

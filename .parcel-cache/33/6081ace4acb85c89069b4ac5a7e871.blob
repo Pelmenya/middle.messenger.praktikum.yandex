@@ -1,0 +1,25 @@
+.form__button-link {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 11px;
+  outline-style: none;
+  box-sizing: border-box;
+  color: #3369F3;
+  border: none;
+  padding: 0;
+  margin-top: 14px;
+  background-color: #fff;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.form__button-link:focus{
+  border: none;
+}
+
+.form__button-link:active{
+  border: none;
+}

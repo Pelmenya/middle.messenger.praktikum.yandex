@@ -1,0 +1,22 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = getParams;
+var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+var _getKey = _interopRequireDefault(require("./getKey"));
+var _isArrayOrObject = _interopRequireDefault(require("./isArrayOrObject"));
+function getParams(data, parentKey) {
+  var result = [];
+  for (var _i = 0, _Object$entries = Object.entries(data); _i < _Object$entries.length; _i++) {
+    var _Object$entries$_i = (0, _slicedToArray2["default"])(_Object$entries[_i], 2), key = _Object$entries$_i[0], value = _Object$entries$_i[1];
+    if ((0, _isArrayOrObject["default"])(value)) {
+      result.push.apply(result, (0, _toConsumableArray2["default"])(getParams(value, (0, _getKey["default"])(key, parentKey))));
+    } else {
+      result.push([(0, _getKey["default"])(key, parentKey), encodeURIComponent(String(value))]);
+    }
+  }
+  return result;
+}

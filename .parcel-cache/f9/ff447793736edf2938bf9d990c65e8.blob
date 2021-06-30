@@ -1,0 +1,6 @@
+.card__person {
+  justify-content: space-between;
+  width: calc(100% - 20px);
+  padding-bottom: 10px;
+  padding-top: 10px;
+}

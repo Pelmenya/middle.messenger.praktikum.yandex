@@ -1,0 +1,4 @@
+.messages-list__time-msg_pic {
+  background: rgba(82, 82, 82, 0.5);
+  color: #fff;
+}

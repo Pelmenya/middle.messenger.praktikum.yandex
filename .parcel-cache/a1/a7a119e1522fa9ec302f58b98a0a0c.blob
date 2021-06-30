@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.chatsProps = void 0;
+var _initalChatsElements = require("./initalChatsElements");
+var chatsProps = {
+  tagNameBlock: "main",
+  classListBlock: ["body__container", "body__container_is-opened"],
+  displayBlock: "flex",
+  elements: _initalChatsElements.initalChatsElements,
+  handler: function handler() {}
+};
+exports.chatsProps = chatsProps;

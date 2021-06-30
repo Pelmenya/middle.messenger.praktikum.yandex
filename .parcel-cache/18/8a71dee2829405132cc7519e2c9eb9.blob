@@ -1,0 +1,8 @@
+.messages-list__text-block {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.messages-list__text-block:last-of-type {
+  margin-bottom: 0px;
+}

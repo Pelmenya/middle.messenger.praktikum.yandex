@@ -1,0 +1,106 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+var _Form = _interopRequireDefault(require("../../../blocks/form/Form"));
+var _Block2 = _interopRequireDefault(require("../../utils/classes/Block"));
+var _getElementFromStore = _interopRequireDefault(require("../../utils/functions/getElementFromStore"));
+var _handlerSendMessageSubmit = _interopRequireDefault(require("../../utils/functions/handlers/submits/handlerSendMessageSubmit"));
+var _storeObj = require("../../utils/store/storeObj");
+var _chatSelected = require("./chatSelected.tmpl");
+var _lodash = _interopRequireDefault(require("lodash"));
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
+  return function _createSuperInternal() {
+    var Super = (0, _getPrototypeOf2["default"])(Derived), result;
+    if (hasNativeReflectConstruct) {
+      var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor;
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+    return (0, _possibleConstructorReturn2["default"])(this, result);
+  };
+}
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+  try {
+    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+var ChatSelected = /*#__PURE__*/(function (_Block) {
+  (0, _inherits2["default"])(ChatSelected, _Block);
+  var _super = _createSuper(ChatSelected);
+  function ChatSelected(props) {
+    var _this;
+    (0, _classCallCheck2["default"])(this, ChatSelected);
+    _this = _super.call(this, props);
+    _this.initFormSendMessage = function () {
+      if (_this.element !== null) {
+        var formContainer = _this.element.querySelector(".messages-list__form-send");
+        if (formContainer !== null) {
+          _this.form = new _Form["default"]({
+            container: formContainer,
+            handlerSubmit: function handlerSubmit(options) {
+              if (_this.card !== null) if (_this.card.props.socket !== null) return (0, _handlerSendMessageSubmit["default"])(options, _this.card.props.socket);
+            }
+          });
+        }
+      }
+      if (_this.form !== null) _this.form.create();
+    };
+    _this.addEventListeners = function () {
+      if (_this.element !== null) {
+        var menuUser = _this.element.querySelector(".form-window_messages-list-header");
+        var editUserBtn = _this.element.querySelector(".messages-list__settings");
+        var addUserBtn = _this.element.querySelector(".menu__button_add-user");
+        var removeUserBtn = _this.element.querySelector(".menu__button_remove-user");
+        _this.element.addEventListener("mousedown", function () {
+          if (_this.props.name_chat !== undefined) {
+            _this.card = (0, _getElementFromStore["default"])(_storeObj.store, "chatsProps", _this.props.name_chat);
+          }
+          if (_this.card !== null && _this.card.element !== null) {
+            _this.card.element.classList.add("card__active");
+          }
+        });
+        if (editUserBtn !== null && menuUser !== null) editUserBtn.addEventListener("click", function () {
+          menuUser.classList.toggle("form-window_is-opened");
+        });
+        if (addUserBtn !== null && menuUser !== null) addUserBtn.addEventListener("click", function () {
+          var addUserPopupElement = (0, _getElementFromStore["default"])(_storeObj.store, "chatsProps", "add_user");
+          menuUser.classList.toggle("form-window_is-opened");
+          addUserPopupElement.show();
+        });
+        if (removeUserBtn !== null && menuUser !== null) removeUserBtn.addEventListener("click", function () {
+          var removeUserPopupElement = (0, _getElementFromStore["default"])(_storeObj.store, "chatsProps", "remove_user");
+          menuUser.classList.toggle("form-window_is-opened");
+          removeUserPopupElement.show();
+        });
+      }
+    };
+    _this.form = null;
+    _this.card = null;
+    _this.addEventListeners();
+    return _this;
+  }
+  (0, _createClass2["default"])(ChatSelected, [{
+    key: "render",
+    value: function render() {
+      return _lodash["default"].template(_chatSelected.chatSelected.tmpl)(this.props);
+    }
+  }]);
+  return ChatSelected;
+})(_Block2["default"]);
+exports["default"] = ChatSelected;

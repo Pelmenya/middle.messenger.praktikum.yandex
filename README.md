@@ -1,6 +1,9 @@
 # Проектная работа №3
 
-«[Сайт проекта Messanger на Netlify](https://happy-colden-7742df.netlify.app)»
+
+«[Ссылка на PullRequest](https://github.com/Pelmenya/middle.messenger.praktikum.yandex/pull/3)»
+
+«[Ссылка на сайт](https://happy-colden-7742df.netlify.app)»
 
 ##  Тема: "Разработка приложения Чат"
 

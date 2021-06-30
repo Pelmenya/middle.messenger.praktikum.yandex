@@ -1,0 +1,21 @@
+.messages-list__send-input {
+  width: calc(100% - 110px);
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  background: #efefef;
+  border-radius: 30px;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  outline: none;
+  color: #1e1e1e;
+}
+
+.messages-list__send-input::placeholder {
+  color: #999;
+}

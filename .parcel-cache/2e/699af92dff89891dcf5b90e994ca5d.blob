@@ -1,0 +1,12 @@
+.chats__link {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: #999999;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 18px;
+}

@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = isDataEmptyInStore;
+var _storeObj = require("../store/storeObj");
+function isDataEmptyInStore(key) {
+  var empty = true;
+  var obj = _storeObj.store.objects[key];
+  for (var k in obj) {
+    if (obj[k] !== null) {
+      empty = false;
+    }
+  }
+  return empty;
+}

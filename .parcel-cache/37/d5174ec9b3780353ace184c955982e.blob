@@ -1,0 +1,3 @@
+.account__edit-btn_log-out {
+  color: #ff0000;
+}

@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.myAccountAvatar = void 0;
+var myAccountAvatar = {
+  tmpl: '<div class="account__avatar" style="background-image: url(<%=avatar%>)">\
+      <div class="account__avatar-overlay" style="display: <%=display%>">\
+        <div class="account__wrap-row account__wrap-row_avatar">\
+          <span class="account__avatar-text">Поменять аватар</span>\
+        </div>\
+      </div>\
+    </div>'
+};
+exports.myAccountAvatar = myAccountAvatar;

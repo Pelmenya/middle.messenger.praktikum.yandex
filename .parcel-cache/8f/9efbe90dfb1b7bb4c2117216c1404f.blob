@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.currentUser = void 0;
+var currentUser = {
+  avatar: null,
+  display_name: null,
+  email: null,
+  first_name: null,
+  id: null,
+  login: null,
+  phone: null,
+  second_name: null
+};
+exports.currentUser = currentUser;

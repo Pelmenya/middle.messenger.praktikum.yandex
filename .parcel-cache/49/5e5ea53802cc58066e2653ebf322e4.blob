@@ -1,0 +1,58 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _currentUser = require("../const/objects/currentUser");
+var _routes = require("../const/routes");
+var _getCurrentUser = _interopRequireDefault(require("../utils/functions/getCurrentUser"));
+var _getDataFromStrore = _interopRequireDefault(require("../utils/functions/getDataFromStrore"));
+var _getUrlRoute = _interopRequireDefault(require("../utils/functions/getUrlRoute"));
+var _renderChats = _interopRequireDefault(require("../utils/functions/renderChats"));
+var _setEditPasswordFields = _interopRequireDefault(require("../utils/functions/setEditPasswordFields"));
+var _setEditUserFields = _interopRequireDefault(require("../utils/functions/setEditUserFields"));
+var _setUserFields = _interopRequireDefault(require("../utils/functions/setUserFields"));
+var _ChatsPage = _interopRequireDefault(require("./classes/ChatsPage"));
+var _ErrorPage = _interopRequireDefault(require("./classes/ErrorPage"));
+var _MyAccountDataPage = _interopRequireDefault(require("./classes/MyAccountDataPage"));
+var _MyAccountPage = _interopRequireDefault(require("./classes/MyAccountPage"));
+var _MyAccountPasswordPage = _interopRequireDefault(require("./classes/MyAccountPasswordPage"));
+var _SignInPage = _interopRequireDefault(require("./classes/SignInPage"));
+var _SignUpPage = _interopRequireDefault(require("./classes/SignUpPage"));
+var _router = require("../const/objects/router");
+require("pages-css/index.css");
+require("pages-css/chat.css");
+require("pages-css/error-page.css");
+require("pages-css/my-account.css");
+_router.router.use(_routes.ROUTES.SIGNIN, _SignInPage["default"], (0, _getDataFromStrore["default"])("signInProps")).use(_routes.ROUTES.SIGNUP, _SignUpPage["default"], (0, _getDataFromStrore["default"])("signUpProps")).use(_routes.ROUTES.CHATS, _ChatsPage["default"], (0, _getDataFromStrore["default"])("chatsProps")).use(_routes.ROUTES.MY_ACCOUNT, _MyAccountPage["default"], (0, _getDataFromStrore["default"])("myAccountProps")).use(_routes.ROUTES.MY_ACCOUNT_DATA, _MyAccountDataPage["default"], (0, _getDataFromStrore["default"])("myAccountDataProps")).use(_routes.ROUTES.MY_ACCOUNT_PASSWORD, _MyAccountPasswordPage["default"], (0, _getDataFromStrore["default"])("myAccountPasswordProps")).use(_routes.ROUTES.ERROR, _ErrorPage["default"], (0, _getDataFromStrore["default"])("errorProps"));
+(0, _getCurrentUser["default"])().then(function (data) {
+  var routeUrl = (0, _getUrlRoute["default"])(window);
+  if (data !== null) {
+    Object.assign(_currentUser.currentUser, data);
+    switch (routeUrl) {
+      case _routes.ROUTES.SIGNIN:
+        (0, _renderChats["default"])();
+        break;
+      case _routes.ROUTES.SIGNUP:
+        (0, _renderChats["default"])();
+        break;
+      case _routes.ROUTES.CHATS:
+        (0, _renderChats["default"])();
+        break;
+      case _routes.ROUTES.MY_ACCOUNT:
+        (0, _setUserFields["default"])();
+        _router.router.go(_routes.ROUTES.MY_ACCOUNT);
+        break;
+      case _routes.ROUTES.MY_ACCOUNT_DATA:
+        (0, _setEditUserFields["default"])();
+        _router.router.go(_routes.ROUTES.MY_ACCOUNT_DATA);
+        break;
+      case _routes.ROUTES.MY_ACCOUNT_PASSWORD:
+        (0, _setEditPasswordFields["default"])();
+        _router.router.go(_routes.ROUTES.MY_ACCOUNT_PASSWORD);
+        break;
+      default:
+        _router.router.go(_routes.ROUTES.ERROR);
+        break;
+    }
+  } else if (routeUrl === _routes.ROUTES.SIGNIN) _router.router.go(_routes.ROUTES.SIGNIN); else if (routeUrl === _routes.ROUTES.SIGNUP) _router.router.go(_routes.ROUTES.SIGNUP); else _router.router.go(_routes.ROUTES.ERROR);
+})["catch"](function (err) {
+  return alert(err);
+});

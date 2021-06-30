@@ -1,0 +1,51 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.chatsAPI = exports["default"] = void 0;
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _HTTPTransport = _interopRequireDefault(require("../classes/HTTPTransport"));
+var _urlsAPI = require("../../const/urlsAPI");
+var chatsAPIInstance = new _HTTPTransport["default"](("").concat(_urlsAPI.URLS_API.BASE).concat(_urlsAPI.URLS_API.CHATS));
+var ChatsAPI = /*#__PURE__*/(function () {
+  function ChatsAPI() {
+    (0, _classCallCheck2["default"])(this, ChatsAPI);
+  }
+  (0, _createClass2["default"])(ChatsAPI, [{
+    key: "getChats",
+    value: function getChats(options) {
+      return chatsAPIInstance.get(_urlsAPI.URLS_API.GET_CHATS, options);
+    }
+  }, {
+    key: "createChat",
+    value: function createChat(options) {
+      return chatsAPIInstance.post(_urlsAPI.URLS_API.CREATE_CHAT, options);
+    }
+  }, {
+    key: "addUserToChat",
+    value: function addUserToChat(options) {
+      return chatsAPIInstance.put(_urlsAPI.URLS_API.USERS, options);
+    }
+  }, {
+    key: "removeUserFromChat",
+    value: function removeUserFromChat(options) {
+      return chatsAPIInstance["delete"](_urlsAPI.URLS_API.USERS, options);
+    }
+  }, {
+    key: "getChatToken",
+    value: function getChatToken(options) {
+      return chatsAPIInstance.post(_urlsAPI.URLS_API.TOKEN, options);
+    }
+  }, {
+    key: "getCountNewMessagesOfChat",
+    value: function getCountNewMessagesOfChat(options) {
+      return chatsAPIInstance.get(_urlsAPI.URLS_API.COUNT_OF_NEW_MESSAGES, options);
+    }
+  }]);
+  return ChatsAPI;
+})();
+exports["default"] = ChatsAPI;
+var chatsAPI = new ChatsAPI();
+exports.chatsAPI = chatsAPI;

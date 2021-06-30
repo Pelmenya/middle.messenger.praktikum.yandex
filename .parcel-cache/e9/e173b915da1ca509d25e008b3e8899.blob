@@ -1,0 +1,35 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = setTokensAndSokets;
+var _Card = _interopRequireDefault(require("../../../blocks/card/Card"));
+var _methods = require("../../const/methods");
+var _urlsAPI = require("../../const/urlsAPI");
+var _ChatsAPI = require("../api/ChatsAPI");
+var _DataWebSocket = _interopRequireDefault(require("../classes/DataWebSocket"));
+var _getDataFromStrore = _interopRequireDefault(require("./getDataFromStrore"));
+function setTokensAndSokets() {
+  var chatsProps = (0, _getDataFromStrore["default"])("chatsProps");
+  var currentUser = (0, _getDataFromStrore["default"])("currentUser");
+  chatsProps.elements.forEach(function (item) {
+    if (item.block instanceof _Card["default"]) {
+      var idChat = item.block.props.id;
+      _ChatsAPI.chatsAPI.getChatToken({
+        method: _methods.METHOD.POST,
+        id: idChat
+      }).then(function (data) {
+        if (item.block instanceof _Card["default"]) {
+          item.block.props.token = JSON.parse(data.response).token;
+          item.block.props.socket = new _DataWebSocket["default"]({
+            path: ("").concat(_urlsAPI.URLS_API.WEBSOCKET).concat(_urlsAPI.URLS_API.CHATS, "/").concat(currentUser.id, "/").concat(idChat, "/").concat(item.block.props.token)
+          });
+          item.block.props.socket.create();
+        }
+      })["catch"](function (err) {
+        return alert(err);
+      });
+    }
+  });
+}

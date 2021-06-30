@@ -1,0 +1,35 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = handlerSendMessageSubmit;
+var _errors = require("../../../../const/errors");
+var _messages = require("../../../../const/messages");
+var _typeSocketData = require("../../../../const/typeSocketData");
+function handlerSendMessageSubmit(options, socket) {
+  return new Promise(function (res, rej) {
+    var data = options.data;
+    if (socket.dataWebSocket !== null) {
+      if (socket.dataWebSocket.readyState === socket.dataWebSocket.CLOSED) {
+        var connecting = new Promise(function (resolve) {
+          socket.create();
+          resolve;
+        });
+        connecting.then(function () {
+          if (socket.dataWebSocket !== null) socket.dataWebSocket.send(JSON.stringify({
+            content: ("").concat(data.message),
+            type: _typeSocketData.TYPE_SOCKET_DATA.TEXT
+          }));
+        });
+      } else if (socket.dataWebSocket.readyState === socket.dataWebSocket.OPEN) {
+        socket.dataWebSocket.send(JSON.stringify({
+          content: ("").concat(data.message),
+          type: _typeSocketData.TYPE_SOCKET_DATA.TEXT
+        }));
+      }
+      res(_messages.MESSAGES.MESSAGE_SEND);
+    } else {
+      rej(_errors.ERRORS.ERROR_SEND_MESSAGE);
+    }
+  });
+}

@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = scrollMessagesContainer;
+function scrollMessagesContainer(container) {
+  var marginBotom = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 20;
+  container.scrollTo({
+    top: Math.max(container.scrollHeight, document.documentElement.scrollHeight, container.offsetHeight, document.documentElement.offsetHeight, container.clientHeight, document.documentElement.clientHeight) + marginBotom,
+    behavior: "smooth"
+  });
+}

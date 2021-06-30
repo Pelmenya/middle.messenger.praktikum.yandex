@@ -1,0 +1,41 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _events = require("../../const/events");
+var _Controller = require("../classes/Controller");
+var _EventBus = _interopRequireDefault(require("../classes/Event-Bus"));
+var Store = /*#__PURE__*/(function () {
+  function Store() {
+    (0, _classCallCheck2["default"])(this, Store);
+    var eventBus = new _EventBus["default"]();
+    this.objects = {};
+    this.eventBus = eventBus;
+    this.createResource(eventBus);
+  }
+  (0, _createClass2["default"])(Store, [{
+    key: "createResource",
+    value: function createResource(eventBus) {
+      eventBus.on(_events.EVENTS.PUT_STORE, _Controller.controller.setCurrentUserProps);
+      eventBus.on(_events.EVENTS.PUT_STORE, _Controller.controller.setSignInProps);
+      eventBus.on(_events.EVENTS.PUT_STORE, _Controller.controller.setSignUpProps);
+      eventBus.on(_events.EVENTS.PUT_STORE, _Controller.controller.setChatsProps);
+      eventBus.on(_events.EVENTS.PUT_STORE, _Controller.controller.setChatsSelectedProps);
+      eventBus.on(_events.EVENTS.PUT_STORE, _Controller.controller.setErrorProps);
+      eventBus.on(_events.EVENTS.PUT_STORE, _Controller.controller.setMyAccountProps);
+      eventBus.on(_events.EVENTS.PUT_STORE, _Controller.controller.setMyAccountDataProps);
+      eventBus.on(_events.EVENTS.PUT_STORE, _Controller.controller.setMyAccountPasswordProps);
+    }
+  }, {
+    key: "listen",
+    value: function listen() {
+      this.eventBus.emit(_events.EVENTS.PUT_STORE);
+    }
+  }]);
+  return Store;
+})();
+exports["default"] = Store;

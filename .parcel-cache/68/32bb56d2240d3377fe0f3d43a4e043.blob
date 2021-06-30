@@ -1,0 +1,72 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = renderChats;
+var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
+var _Card = _interopRequireDefault(require("../../../blocks/card/Card"));
+var _consts = require("../../const/consts");
+var _router = require("../../const/objects/router");
+var _routes = require("../../const/routes");
+var _ChatsAPI = require("../api/ChatsAPI");
+var _clearContainer = _interopRequireDefault(require("./clearContainer"));
+var _getDataFromStrore = _interopRequireDefault(require("./getDataFromStrore"));
+var _getDateOfMessages = _interopRequireDefault(require("./getDateOfMessages"));
+var _render = _interopRequireDefault(require("./render"));
+var _setTokensAndSockets = _interopRequireDefault(require("./setTokensAndSockets"));
+function renderChats() {
+  _ChatsAPI.chatsAPI.getChats({
+    data: {
+      offset: _consts.OFFSET_CHATS,
+      limit: _consts.LIMIT_CHATS
+    }
+  }).then(function (data) {
+    return JSON.parse(data.response);
+  }).then(function (arrChats) {
+    var chatsProps = (0, _getDataFromStrore["default"])("chatsProps");
+    var arr = [];
+    arrChats.forEach(function (chat, index) {
+      var lastMessage = "";
+      var lastMessageDate = "";
+      var dateTime = "";
+      if (chat.last_message !== null) {
+        var chatLastMessage = JSON.parse(chat.last_message);
+        lastMessage = chatLastMessage.content;
+        lastMessageDate = (0, _getDateOfMessages["default"])(chatLastMessage.time.slice(0, 10));
+        dateTime = chatLastMessage.time.slice(0, 10);
+      }
+      arr.push({
+        query: ".chats-list__container",
+        block: new _Card["default"]({
+          tagNameBlock: "div",
+          classListBlock: ["card"],
+          tabIndex: index + 2,
+          displayBlock: "flex",
+          title: chat.title,
+          name: ("").concat(chat.title).concat(Math.random()),
+          last_message: lastMessage,
+          date: lastMessageDate,
+          datetime: dateTime,
+          unread_count: chat.unread_count,
+          id: chat.id,
+          token: null,
+          socket: null
+        })
+      });
+    });
+    _router.router.go(_routes.ROUTES.CHATS);
+    var container = document.querySelector(".chats-list__container");
+    if (container != null) {
+      (0, _clearContainer["default"])(container);
+      (0, _render["default"])(arr);
+    }
+    chatsProps.elements = chatsProps.elements.filter(function (item) {
+      return !(item.block instanceof _Card["default"]);
+    });
+    chatsProps.elements = [].concat((0, _toConsumableArray2["default"])(chatsProps.elements), arr);
+    (0, _setTokensAndSockets["default"])();
+  })["catch"](function (err) {
+    return alert(err);
+  });
+}

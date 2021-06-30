@@ -1,0 +1,11 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = isArrayOrObject;
+var _isArray = _interopRequireDefault(require("./isArray"));
+var _isPlainObject = _interopRequireDefault(require("./isPlainObject"));
+function isArrayOrObject(value) {
+  return (0, _isPlainObject["default"])(value) || (0, _isArray["default"])(value);
+}

@@ -1,0 +1,128 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+var _routes = require("../../const/routes");
+var _getCurrentUser = _interopRequireDefault(require("../functions/getCurrentUser"));
+var _getUrlRoute = _interopRequireDefault(require("../functions/getUrlRoute"));
+var _isDataEmptyInStore = _interopRequireDefault(require("../functions/isDataEmptyInStore"));
+var _Route = _interopRequireDefault(require("./Route"));
+var Router = /*#__PURE__*/(function () {
+  function Router() {
+    var _this = this;
+    var rootQuery = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ".app";
+    (0, _classCallCheck2["default"])(this, Router);
+    this.create = function () {
+      window.onpopstate = _this.handlerOnPopState;
+    };
+    this.handlerOnPopState = function (event) {
+      if (event.target instanceof Window) {
+        var routeUrl = (0, _getUrlRoute["default"])(event.target);
+        (0, _getCurrentUser["default"])().then(function (data) {
+          if (data !== null) {
+            if (_this.history.state !== null) {
+              _this.onRoute(_this.history.state.url);
+            } else {
+              _this.onRoute(routeUrl);
+            }
+          } else {
+            if (routeUrl === _routes.ROUTES.SIGNIN) _this.onRoute(_routes.ROUTES.SIGNIN); else if (routeUrl === _routes.ROUTES.SIGNUP) {
+              _this.onRoute(_routes.ROUTES.SIGNUP);
+            } else {
+              _this.onRoute(_routes.ROUTES.ERROR);
+            }
+          }
+        });
+      }
+    };
+    this.routes = [];
+    this.history = window.history;
+    this.currentRoute = null;
+    this.rootQuery = rootQuery;
+    this.activePage = 0;
+    this.create();
+  }
+  (0, _createClass2["default"])(Router, [{
+    key: "use",
+    value: function use(pathname, block, blockProps) {
+      var route = new _Route["default"](pathname, block, {
+        blockProps: blockProps,
+        rootQuery: this.rootQuery
+      });
+      this.routes.push(route);
+      return this;
+    }
+  }, {
+    key: "start",
+    value: function start() {
+      if (this.history.state === null) this.onRoute((0, _getUrlRoute["default"])(window)); else this.onRoute(this.history.state.url);
+    }
+  }, {
+    key: "onRoute",
+    value: function onRoute(pathname) {
+      var route = this.getRoute(pathname);
+      if (!route) {
+        this.go(_routes.ROUTES.ERROR);
+        return;
+      }
+      if (this.currentRoute) {
+        this.currentRoute.leave();
+      }
+      this.currentRoute = route;
+      route.render();
+    }
+  }, {
+    key: "go",
+    value: function go(pathname) {
+      if ((0, _getUrlRoute["default"])(window) === _routes.ROUTES.SIGNIN || (0, _getUrlRoute["default"])(window) === _routes.ROUTES.SIGNUP) {
+        if ((0, _isDataEmptyInStore["default"])("currentUser")) {
+          this.activePage++;
+          this.history.pushState({
+            page: this.activePage,
+            url: pathname
+          }, ("Title: ").concat(this.activePage), pathname);
+          this.onRoute(pathname);
+        } else {
+          this.activePage++;
+          this.history.replaceState({
+            page: this.activePage,
+            url: _routes.ROUTES.CHATS
+          }, ("Title: ").concat(this.activePage), _routes.ROUTES.CHATS);
+          this.onRoute(_routes.ROUTES.CHATS);
+        }
+      } else {
+        this.activePage++;
+        this.history.pushState({
+          page: this.activePage,
+          url: pathname
+        }, ("Title: ").concat(this.activePage), pathname);
+        this.onRoute(pathname);
+      }
+    }
+  }, {
+    key: "back",
+    value: function back() {
+      this.activePage--;
+      this.history.back();
+    }
+  }, {
+    key: "forward",
+    value: function forward() {
+      this.activePage++;
+      this.history.forward();
+    }
+  }, {
+    key: "getRoute",
+    value: function getRoute(pathname) {
+      return this.routes.find(function (route) {
+        return route.match(pathname);
+      });
+    }
+  }]);
+  return Router;
+})();
+exports["default"] = Router;
