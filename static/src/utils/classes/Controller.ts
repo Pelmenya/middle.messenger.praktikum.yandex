@@ -1,15 +1,15 @@
-import { Nullable } from "../../types/Nullable.js";
-import { currentUser } from "../../const/objects/currentUser.js";
-import { signInProps } from "../../const/objects/signInProps.js";
-import { signUpProps } from "../../const/objects/signUpProps.js";
-import Store from "../store/Store.js";
-import { store } from "../store/storeObj.js";
-import { chatsProps } from "../../const/objects/chatsProps.js";
-import { errorProps } from "../../const/objects/errorProps.js";
-import { chatsSelectedProps } from "../../const/objects/chatsSelectedProps.js";
-import { myAccountProps } from "../../const/objects/myAccountProps.js";
-import { myAccountDataProps } from "../../const/objects/myAccountDataProps.js";
-import { myAccountPasswordProps } from "../../const/objects/myAccountPasswordProps.js";
+import { Nullable } from "../../types/Nullable";
+import { currentUser } from "../../const/objects/currentUser";
+import { signInProps } from "../../const/objects/signInProps";
+import { signUpProps } from "../../const/objects/signUpProps";
+import Store from "../store/Store";
+import { store } from "../store/storeObj";
+import { chatsProps } from "../../const/objects/chatsProps";
+import { errorProps } from "../../const/objects/errorProps";
+import { chatsSelectedProps } from "../../const/objects/chatsSelectedProps";
+import { myAccountProps } from "../../const/objects/myAccountProps";
+import { myAccountDataProps } from "../../const/objects/myAccountDataProps";
+import { myAccountPasswordProps } from "../../const/objects/myAccountPasswordProps";
 
 export default class Controller {
   private putToStore(store: Store, obj: Nullable<Object>, key: string) {

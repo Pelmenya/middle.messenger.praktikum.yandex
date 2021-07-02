@@ -1,5 +1,4 @@
-export default function clearChats() {
-  const container = document.querySelector(".chats-list__container");
+export default function clearContainer(container: HTMLElement) {
   if (container !== null) {
     while (container.firstChild) {
       container.removeChild(container.firstChild);

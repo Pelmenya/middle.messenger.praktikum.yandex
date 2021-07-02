@@ -3,6 +3,9 @@
 @import url(./_grey/body_grey.css);
 @import url(./_is-opened/body_is-opened.css);
 
+body {
+  background: #efefef;
+}
 
 .body {
   width: 100vw;
@@ -16,17 +19,17 @@
   display: none;
 }
 
-.page-link{
+.page-link {
   font-family: Inter;
   font-size: 15px;
-  color:maroon;
+  color: maroon;
   position: absolute;
   bottom: 20px;
   right: 20px;
   z-index: 99;
 }
 
-.page-link_chat{
+.page-link_chat {
   bottom: 200px;
   right: 20px;
 }

@@ -1,7 +1,7 @@
-import Button from "../../../blocks/button/Button.js";
-import { PATTERNS } from "../regex.js";
-import { router } from "../../utils/classes/Router.js";
-import { handlerSignUpPage } from "../../utils/functions/handlers/pages/handlerSignUpPage.js";
+import Button from "../../../blocks/button/Button";
+import { PATTERNS } from "../regex";
+import { handlerSignUpPage } from "../../utils/functions/handlers/pages/handlerSignUpPage";
+import { router } from "./router";
 
 export const signUpProps = {
   tagNameBlock: "main",

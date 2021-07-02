@@ -1,6 +1,6 @@
-import Button from "../../../blocks/button/Button.js";
-import { router } from "../../utils/classes/Router.js";
-import { handlerSignInPage } from "../../utils/functions/handlers/pages/handlerSignInPage.js";
+import Button from "../../../blocks/button/Button";
+import { handlerSignInPage } from "../../utils/functions/handlers/pages/handlerSignInPage";
+import { router } from "./router";
 
 export const signInProps = {
   tagNameBlock: "main",

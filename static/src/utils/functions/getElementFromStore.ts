@@ -1,4 +1,4 @@
-import Store from "../store/Store.js";
+import Store from "../store/Store";
 
 export default function getElementFromStore(store: Store, pageProps: string, name: string) {
   let obj: any;

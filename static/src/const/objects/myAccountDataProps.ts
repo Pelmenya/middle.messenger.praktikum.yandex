@@ -1,8 +1,8 @@
-import Button from "../../../blocks/button/Button.js";
-import MyAccountAvatar from "../../template-parts/my-account/MyAccountAvatar.js";
-import MyAccountUser from "../../template-parts/my-account/MyAccountUser.js";
-import { PATTERNS } from "../regex.js";
-import { currentUser } from "./currentUser.js";
+import Button from "../../../blocks/button/Button";
+import MyAccountAvatar from "../../template-parts/my-account/MyAccountAvatar";
+import MyAccountUser from "../../template-parts/my-account/MyAccountUser";
+import { PATTERNS } from "../regex";
+import { currentUser } from "./currentUser";
 
 export const myAccountDataProps = {
   tagNameBlock: "main",

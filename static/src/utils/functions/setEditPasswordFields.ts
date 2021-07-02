@@ -1,6 +1,6 @@
-import { store } from "../store/storeObj.js";
-import getElementFromStore from "./getElementFromStore.js";
-import setAvatarField from "./setAvatarField.js";
+import { store } from "../store/storeObj";
+import getElementFromStore from "./getElementFromStore";
+import setAvatarField from "./setAvatarField";
 
 export default function setEditPasswordFields(){
   setAvatarField("myAccountPasswordProps");

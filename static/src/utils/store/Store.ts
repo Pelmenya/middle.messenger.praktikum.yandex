@@ -1,7 +1,7 @@
-import { EVENTS } from "../../const/events.js";
-import { PlainObject } from "../../types/PlainObject.js";
-import { controller } from "../classes/Controller.js";
-import EventBus from "../classes/Event-Bus.js";
+import { EVENTS } from "../../const/events";
+import { PlainObject } from "../../types/PlainObject";
+import { controller } from "../classes/Controller";
+import EventBus from "../classes/Event-Bus";
 
 export default class Store {
   public objects: PlainObject<any>;

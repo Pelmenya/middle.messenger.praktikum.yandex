@@ -1,4 +1,4 @@
-import { initalChatsElements } from "./initalChatsElements.js";
+import { initalChatsElements } from "./initalChatsElements";
 
 export const chatsProps = {
   tagNameBlock: "main",

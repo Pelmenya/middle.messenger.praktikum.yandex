@@ -1,5 +1,5 @@
-import isEqualStrings from "../functions/isEqualStrings.js";
-import render from "../functions/render.js";
+import isEqualStrings from "../functions/isEqualStrings";
+import render from "../functions/render";
 
 interface RouteProps {
   rootQuery: string;

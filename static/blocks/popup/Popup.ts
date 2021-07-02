@@ -1,8 +1,9 @@
-import Block from "../../src/utils/classes/Block.js";
-import BlockProps from "../../src/types/BlockProps.js";
-import { popup } from "./popup.tmpl.js";
-import Form from "../form/Form.js";
-import { Nullable } from "../../src/types/Nullable.js";
+import Block from "../../src/utils/classes/Block";
+import BlockProps from "../../src/types/BlockProps";
+import { popup } from "./popup.tmpl";
+import Form from "../form/Form";
+import { Nullable } from "../../src/types/Nullable";
+import _ from "lodash";
 
 export interface PopupProps extends BlockProps {
   title: string;

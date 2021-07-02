@@ -1,4 +1,4 @@
-import { store } from "../store/storeObj.js";
+import { store } from "../store/storeObj";
 
 export default function getDataFromStore(key: string) {
 

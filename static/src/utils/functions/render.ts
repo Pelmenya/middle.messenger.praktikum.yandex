@@ -1,4 +1,4 @@
-import { RendersBlocks } from "../../types/RendersBlocks.js";
+import { RendersBlocks } from "../../types/RendersBlocks";
 
 
 export default function render(rendersBloks: RendersBlocks) {

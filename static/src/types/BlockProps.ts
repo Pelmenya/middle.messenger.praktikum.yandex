@@ -8,5 +8,5 @@ export default interface BlockProps {
   handler?: Function;
   elements?: object[];
   visible?:boolean;
-  name:string;
+  name?:string;
 };

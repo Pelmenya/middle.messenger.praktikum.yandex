@@ -1,8 +1,9 @@
-import BlockProps from "../../types/BlockProps.js";
-import Block from "../../utils/classes/Block.js";
-import getElementFromStore from "../../utils/functions/getElementFromStore.js";
-import { store } from "../../utils/store/storeObj.js";
-import { myAccountAvatar } from "./my-account-avatar.tmpl.js";
+import BlockProps from "../../types/BlockProps";
+import Block from "../../utils/classes/Block";
+import getElementFromStore from "../../utils/functions/getElementFromStore";
+import { store } from "../../utils/store/storeObj";
+import { myAccountAvatar } from "./my-account-avatar.tmpl";
+import _ from "lodash";
 
 interface MyAccountAvatarProps extends BlockProps {
   avatar: string;

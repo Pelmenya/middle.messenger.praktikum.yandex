@@ -1,7 +1,7 @@
-import { store } from "../store/storeObj.js";
-import getDataFromStore from "./getDataFromStrore.js";
-import getElementFromStore from "./getElementFromStore.js";
-import setAvatarField from "./setAvatarField.js";
+import { store } from "../store/storeObj";
+import getDataFromStore from "./getDataFromStrore";
+import getElementFromStore from "./getElementFromStore";
+import setAvatarField from "./setAvatarField";
 
 export default function setEditUserFields() {
   setAvatarField("myAccountDataProps");

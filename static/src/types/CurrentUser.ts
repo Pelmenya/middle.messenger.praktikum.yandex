@@ -1,4 +1,4 @@
-import { Nullable } from "./Nullable.js";
+import { Nullable } from "./Nullable";
 
 export default interface CurrentUser {
   [key: string]: Nullable<String | Number>;

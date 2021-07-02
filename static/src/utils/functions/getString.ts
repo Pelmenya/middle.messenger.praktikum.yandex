@@ -1,6 +1,6 @@
-import { PlainObject } from "../../types/PlainObject.js";
-import getParams from "./getParams.js";
-import isPlainObject from "./isPlainObject.js";
+import { PlainObject } from "../../types/PlainObject";
+import getParams from "./getParams";
+import isPlainObject from "./isPlainObject";
 
 export default function queryString(data: PlainObject) {
   if (!isPlainObject(data)) {

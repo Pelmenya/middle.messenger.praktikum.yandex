@@ -2,10 +2,10 @@
 
 # compiled output
 /static/dist
+/bundle
 /dist
 /tmp
 /out-tsc
-
 # Runtime data
 pids
 *.pid
@@ -96,3 +96,5 @@ Thumbs.db
 node_modules
 storybook-static
 .loki
+.cache
+.parcel-cache

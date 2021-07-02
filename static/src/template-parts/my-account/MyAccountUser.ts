@@ -1,10 +1,11 @@
-import Form from "../../../blocks/form/Form.js";
-import BlockProps from "../../types/BlockProps.js";
-import CurrentUser from "../../types/CurrentUser.js";
-import { Nullable } from "../../types/Nullable.js";
-import Block from "../../utils/classes/Block.js";
-import { myAccountUser } from "./my-account-user.tmpl.js";
-import handlerEditUserDataSubmit from "../../utils/functions/handlers/submits/handlerEditUserDataSubmit.js";
+import Form from "../../../blocks/form/Form";
+import BlockProps from "../../types/BlockProps";
+import CurrentUser from "../../types/CurrentUser";
+import { Nullable } from "../../types/Nullable";
+import Block from "../../utils/classes/Block";
+import { myAccountUser } from "./my-account-user.tmpl";
+import handlerEditUserDataSubmit from "../../utils/functions/handlers/submits/handlerEditUserDataSubmit";
+import _ from "lodash";
 
 interface MyAccountUserProps extends BlockProps {
   disabled: string;

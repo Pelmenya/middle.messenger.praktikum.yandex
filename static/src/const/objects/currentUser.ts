@@ -1,4 +1,4 @@
-import CurrentUser from "../../types/CurrentUser.js";
+import CurrentUser from "../../types/CurrentUser";
 
 
 export const currentUser: CurrentUser = {

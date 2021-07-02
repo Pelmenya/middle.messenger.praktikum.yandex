@@ -1,5 +1,5 @@
-import { PlainObject } from "../../types/PlainObject.js";
-import isArrayOrObject from "./isArrayOrObject.js";
+import { PlainObject } from "../../types/PlainObject";
+import isArrayOrObject from "./isArrayOrObject";
 
 export default function isEqual(lhs: PlainObject, rhs: PlainObject) {
   // Сравнение количества ключей объектов и массивов

@@ -1,9 +1,14 @@
-import BlockProps from "../../types/BlockProps.js";
-import Block from "../../utils/classes/Block.js";
-import { chatNotSelected } from "./chatNotSelected.tmpl.js";
+import BlockProps from "../../types/BlockProps";
+import Block from "../../utils/classes/Block";
+import { chatNotSelected } from "./chatNotSelected.tmpl";
+import _ from "lodash";
 
-export default class ChatNotSelected extends Block<BlockProps> {
-  constructor(props: BlockProps) {
+interface ChatNotSelectedProps extends BlockProps{
+  message: string;
+}
+
+export default class ChatNotSelected extends Block<ChatNotSelectedProps> {
+  constructor(props: ChatNotSelectedProps) {
     super(props);
   }
 

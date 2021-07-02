@@ -1,6 +1,6 @@
-import { PlainObject } from "../../types/PlainObject.js";
-import getKey from "./getKey.js";
-import isArrayOrObject from "./isArrayOrObject.js";
+import { PlainObject } from "../../types/PlainObject";
+import getKey from "./getKey";
+import isArrayOrObject from "./isArrayOrObject";
 
 export default function getParams(data: PlainObject | [], parentKey?: string) {
   const result: [string, string][] = [];

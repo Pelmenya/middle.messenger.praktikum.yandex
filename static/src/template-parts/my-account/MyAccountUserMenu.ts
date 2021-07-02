@@ -1,11 +1,12 @@
-import { ROUTES } from "../../const/routes.js";
-import BlockProps from "../../types/BlockProps.js";
-import Block from "../../utils/classes/Block.js";
-import { router } from "../../utils/classes/Router.js";
-import handlerLogOutUser from "../../utils/functions/handlers/handlerLogOutUser.js";
-import setEditPasswordFields from "../../utils/functions/setEditPasswordFields.js";
-import setEditUserFields from "../../utils/functions/setEditUserFields.js";
-import { myAccountUserMenu } from "./my-account-user-menu.tmpl.js";
+import { ROUTES } from "../../const/routes";
+import BlockProps from "../../types/BlockProps";
+import Block from "../../utils/classes/Block";
+import handlerLogOutUser from "../../utils/functions/handlers/handlerLogOutUser";
+import setEditPasswordFields from "../../utils/functions/setEditPasswordFields";
+import setEditUserFields from "../../utils/functions/setEditUserFields";
+import { myAccountUserMenu } from "./my-account-user-menu.tmpl";
+import _ from "lodash";
+import { router } from "../../const/objects/router";
 
 export default class MyAccountUserMenu extends Block<BlockProps> {
   constructor(props: BlockProps) {

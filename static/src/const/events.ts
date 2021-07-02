@@ -5,5 +5,9 @@ export enum EVENTS{
   FLOW_CWU = "flow:component-will-unmount",
   FLOW_RENDER = "flow:render",
   FLOW_HANDLER = "handler",
-  PUT_STORE = "put-store" 
+  PUT_STORE = "put-store",
+  OPEN_SOCKET = "flow:open-socket",
+  CLOSE_SOCKET = "flow:close-socket",
+  MESSAGE_SOKET = "flow:message-socket",
+  ERROR_SOCKET = "flow:error-socket"
 }

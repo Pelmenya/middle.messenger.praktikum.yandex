@@ -1,9 +1,9 @@
-import { ROUTES } from "../../const/routes.js";
-import { Nullable } from "../../types/Nullable.js";
-import getCurrentUser from "../functions/getCurrentUser.js";
-import getUrlRoute from "../functions/getUrlRoute.js";
-import isDataEmptyInStore from "../functions/isDataEmptyInStore.js";
-import Route from "./Route.js";
+import { ROUTES } from "../../const/routes";
+import { Nullable } from "../../types/Nullable";
+import getCurrentUser from "../functions/getCurrentUser";
+import getUrlRoute from "../functions/getUrlRoute";
+import isDataEmptyInStore from "../functions/isDataEmptyInStore";
+import Route from "./Route";
 
 export default class Router {
   private rootQuery: string;
@@ -18,7 +18,12 @@ export default class Router {
     this.currentRoute = null;
     this.rootQuery = rootQuery;
     this.activePage = 0;
+    this.create();
   }
+
+  public create = () => {
+    window.onpopstate = this.handlerOnPopState;
+  };
 
   public use(pathname: string, block: Function, blockProps: any) {
     const route = new Route(pathname, block, { blockProps, rootQuery: this.rootQuery });
@@ -27,29 +32,28 @@ export default class Router {
   }
 
   private handlerOnPopState = (event: Event) => {
-    const routeUrl = getUrlRoute(window);
-    getCurrentUser().then((data) => {
-      if (data !== null) {
-        if (event.currentTarget instanceof Window)
-          if (this.history.state !== null) {
-            this.onRoute(this.history.state.url);
-          } else {
-            this.onRoute(getUrlRoute(event.currentTarget));
-          }
-      } else {
-        console.log(routeUrl);
-        if (routeUrl === ROUTES.SIGNIN) this.onRoute(ROUTES.SIGNIN);
-        else if (routeUrl === ROUTES.SIGNUP) {
-          this.onRoute(ROUTES.SIGNUP);
+    if (event.target instanceof Window) {
+      const routeUrl = getUrlRoute(event.target);
+      getCurrentUser().then((data) => {
+        if (data !== null) {
+            if (this.history.state !== null) {
+              this.onRoute(this.history.state.url);
+            } else {
+              this.onRoute(routeUrl);
+            }
         } else {
-          this.onRoute(ROUTES.ERROR);
+          if (routeUrl === ROUTES.SIGNIN) this.onRoute(ROUTES.SIGNIN);
+          else if (routeUrl === ROUTES.SIGNUP) {
+            this.onRoute(ROUTES.SIGNUP);
+          } else {
+            this.onRoute(ROUTES.ERROR);
+          }
         }
-      }
-    });
+      });
+    }
   };
 
   public start() {
-    window.onpopstate = this.handlerOnPopState;
     if (this.history.state === null) this.onRoute(getUrlRoute(window));
     else this.onRoute(this.history.state.url);
   }
@@ -57,6 +61,7 @@ export default class Router {
   private onRoute(pathname: string) {
     const route = this.getRoute(pathname);
     if (!route) {
+      this.go(ROUTES.ERROR);
       return;
     }
 
@@ -69,9 +74,7 @@ export default class Router {
   }
 
   public go(pathname: string) {
-    window.onpopstate = this.handlerOnPopState;
-
-    if (getUrlRoute(window) === ROUTES.SIGNIN) {
+    if (getUrlRoute(window) === ROUTES.SIGNIN || getUrlRoute(window) === ROUTES.SIGNUP) {
       if (isDataEmptyInStore("currentUser")) {
         this.activePage++;
         this.history.pushState(
@@ -101,12 +104,12 @@ export default class Router {
   }
 
   public back() {
-    window.onpopstate = this.handlerOnPopState;
+    this.activePage--;
     this.history.back();
   }
 
   public forward() {
-    window.onpopstate = this.handlerOnPopState;
+    this.activePage++;
     this.history.forward();
   }
 
@@ -114,5 +117,3 @@ export default class Router {
     return this.routes.find((route) => route.match(pathname));
   }
 }
-
-export const router = new Router(".app");

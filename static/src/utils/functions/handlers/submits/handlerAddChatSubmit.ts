@@ -1,19 +1,16 @@
-import Popup from "../../../../../blocks/popup/Popup.js";
-import { Options } from "../../../../types/Options.js";
-import { chatsAPI } from "../../../api/ChatsAPI.js";
-import { store } from "../../../store/storeObj.js";
-import getElementFromStore from "../../getElementFromStore.js";
-import renderChats from "../../renderChats.js";
-
+import Popup from "../../../../../blocks/popup/Popup";
+import { Options } from "../../../../types/Options";
+import { chatsAPI } from "../../../api/ChatsAPI";
+import { store } from "../../../store/storeObj";
+import getElementFromStore from "../../getElementFromStore";
+import renderChats from "../../renderChats";
 
 export default function handlerAddChatSubmit(options: Options) {
   return chatsAPI
     .createChat(options)
     .then((data) => {
-      if (data.status === 200) {
-        console.log(store)
+      if (data.status >= 200 && data.status <= 299) {
         const addChatPopupElement: Popup = getElementFromStore(store, "chatsProps", "add_chat");
-        console.log(addChatPopupElement)
         if (addChatPopupElement !== null) addChatPopupElement.hide();
         renderChats();
       } else {
@@ -21,5 +18,5 @@ export default function handlerAddChatSubmit(options: Options) {
         return obj.reason;
       }
     })
-    .catch((err) => console.log(err));
+    .catch((err) => alert(err));
 }

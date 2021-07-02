@@ -1,7 +1,7 @@
-import { currentUser } from "../../const/objects/currentUser.js";
-import { URLS_API } from "../../const/urlsAPI.js";
-import { store } from "../store/storeObj.js";
-import getElementFromStore from "./getElementFromStore.js";
+import { currentUser } from "../../const/objects/currentUser";
+import { URLS_API } from "../../const/urlsAPI";
+import { store } from "../store/storeObj";
+import getElementFromStore from "./getElementFromStore";
 
 export default function setAvatarField(pageProps: string) {
   const avatar = getElementFromStore(store, pageProps, "avatarField");

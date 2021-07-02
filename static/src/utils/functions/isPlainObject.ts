@@ -1,4 +1,4 @@
-import { PlainObject } from "../../types/PlainObject.js";
+import { PlainObject } from "../../types/PlainObject";
 
 export default function isPlainObject(value: unknown): value is PlainObject {
   return typeof value === 'object'

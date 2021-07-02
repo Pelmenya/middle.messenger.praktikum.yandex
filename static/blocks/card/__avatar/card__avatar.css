@@ -1,9 +1,11 @@
 .card__avatar {
   height: 47px;
   width: 47px;
+  min-width: 47px;
+  max-height: 47px;
   background-color: #efefef;
   background-repeat: no-repeat;
-  background-size: contain;
   border-radius: 50%;
   margin-right: 10px;
+  background-image: url(../../../images/ellipse.jpg);
 }

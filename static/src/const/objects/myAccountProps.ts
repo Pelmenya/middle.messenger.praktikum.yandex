@@ -1,10 +1,10 @@
-import Button from "../../../blocks/button/Button.js";
-import MyAccountAvatar from "../../template-parts/my-account/MyAccountAvatar.js";
-import MyAccountUser from "../../template-parts/my-account/MyAccountUser.js";
-import MyAccountUserMenu from "../../template-parts/my-account/MyAccountUserMenu.js";
-import PopupAvatar from "../../template-parts/my-account/PopupAvatar.js";
-import { PATTERNS } from "../regex.js";
-import { currentUser } from "./currentUser.js";
+import Button from "../../../blocks/button/Button";
+import MyAccountAvatar from "../../template-parts/my-account/MyAccountAvatar";
+import MyAccountUser from "../../template-parts/my-account/MyAccountUser";
+import MyAccountUserMenu from "../../template-parts/my-account/MyAccountUserMenu";
+import PopupAvatar from "../../template-parts/my-account/PopupAvatar";
+import { PATTERNS } from "../regex";
+import { currentUser } from "./currentUser";
 
 export const myAccountProps = {
   tagNameBlock: "main",

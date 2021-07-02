@@ -1,9 +1,9 @@
-import { EVENTS } from "../../const/events.js";
-import BlockProps from "../../types/BlockProps.js";
-import { Nullable } from "../../types/Nullable.js";
-import { PlainObject } from "../../types/PlainObject.js";
-import isEqual from "../functions/isEqual.js";
-import EventBus from "./Event-Bus.js";
+import { EVENTS } from "../../const/events";
+import BlockProps from "../../types/BlockProps";
+import { Nullable } from "../../types/Nullable";
+import { PlainObject } from "../../types/PlainObject";
+import isEqual from "../functions/isEqual";
+import EventBus from "./Event-Bus";
 
 export default class Block<Props extends BlockProps> {
   private _element: Nullable<HTMLElement>;

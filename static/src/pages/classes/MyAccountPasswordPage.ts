@@ -1,8 +1,9 @@
-import { myAccount } from "../../template-parts/my-account/my-account.tmpl.js";
-import BlockProps from "../../types/BlockProps.js";
-import Block from "../../utils/classes/Block.js";
-import { router } from "../../utils/classes/Router.js";
-import setUserFields from "../../utils/functions/setUserFields.js";
+import { myAccount } from "../../template-parts/my-account/my-account.tmpl";
+import BlockProps from "../../types/BlockProps";
+import Block from "../../utils/classes/Block";
+import setUserFields from "../../utils/functions/setUserFields";
+import { router } from "../../const/objects/router";
+import _ from "lodash";
 
 export default class MyAccountPasswordPage extends Block<BlockProps> {
   constructor(props: BlockProps) {

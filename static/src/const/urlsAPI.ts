@@ -13,5 +13,8 @@ export enum URLS_API {
   PROFILE = "/profile",
   AVATAR = "/avatar",
   PASSWORD = "/password",
-  RESOURCES = "/resources"
+  RESOURCES = "/resources",
+  TOKEN = "/token",
+  WEBSOCKET  = "wss://ya-praktikum.tech/ws",
+  COUNT_OF_NEW_MESSAGES = "/new"
 }
