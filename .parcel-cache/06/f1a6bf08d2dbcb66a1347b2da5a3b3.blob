@@ -1,4 +1,0 @@
-.body__container_is-opened {
-   display: flex; 
-   background: #f2f2f2;
-}

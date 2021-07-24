@@ -27,7 +27,7 @@ export default function renderChats() {
         let lastMessageDate = "";
         let dateTime = "";
         if (chat.last_message !== null) {
-          const chatLastMessage = JSON.parse(chat.last_message);
+          const chatLastMessage = chat.last_message;
           lastMessage = chatLastMessage.content;
           lastMessageDate = getDateOfMessages(chatLastMessage.time.slice(0, 10));
           dateTime = chatLastMessage.time.slice(0, 10);

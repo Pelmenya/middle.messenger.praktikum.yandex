@@ -1,5 +1,0 @@
-.card__number-message-text {
-  display: block;
-  text-align: center;
-  width: 100%;
-}

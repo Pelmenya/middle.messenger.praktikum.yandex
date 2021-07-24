@@ -1,6 +1,0 @@
-.account__spliter {
-  width:100%;
-  border: none;
-  border-top: 1px solid #eaeaea;
-  margin: 0;
-}

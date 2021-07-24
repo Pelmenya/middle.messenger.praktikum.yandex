@@ -1,8 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = getKey;
-function getKey(key, parentKey) {
-  return parentKey ? ("").concat(parentKey, "[").concat(key, "]") : key;
-}

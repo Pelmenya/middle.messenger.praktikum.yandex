@@ -1,9 +1,0 @@
-.messages-list__send {
-  display: block;
-  background-image: url("832b50537890a2581a112fd124474dee");
-}
-
-.messages-list__send:active,
-.messages-list__send:focus {
-  background-image: url("1e277a046e012c5eb7a59e6998727ce1");
-}

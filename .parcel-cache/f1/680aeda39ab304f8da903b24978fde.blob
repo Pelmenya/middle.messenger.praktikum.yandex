@@ -1,7 +1,0 @@
-.messages-list__time-msg-check {
-  display: inline-block;
-  width: 11px;
-  height: 5px;
-  margin-right: 4px;
-  background-image: url("d0088f8cbb9537c582371facf8e869f8");
-}

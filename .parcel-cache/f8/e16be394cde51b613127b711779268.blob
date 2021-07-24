@@ -1,8 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = getUrlRoute;
-function getUrlRoute(win) {
-  return win.location.href.replace(win.location.origin, "");
-}

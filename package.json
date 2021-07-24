@@ -16,13 +16,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Pelmenya/mf.messenger.praktikum.yandex.git"
+    "url": "git+https://github.com/Pelmenya/middle.messenger.praktikum.yandex.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Pelmenya/mf.messenger.praktikum.yandex/issues"
+    "url": "https://github.com/Pelmenya/middle.messenger.praktikum.yandex/issues"
   },
   "homepage": "https://github.com/Pelmenya/mf.messenger.praktikum.yandex#readme",
   "alias": {
@@ -52,7 +52,7 @@
     "typescript": "4.1.5"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.12.1",
+    "@babel/polyfill": "7.12.1",
     "@types/lodash": "4.14.168",
     "cors": "2.8.5",
     "lodash": "4.17.21",

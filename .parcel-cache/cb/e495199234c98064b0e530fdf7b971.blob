@@ -1,3 +1,0 @@
-.messages-list__container_start {
-  flex-direction: row;
-}

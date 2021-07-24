@@ -1,9 +1,0 @@
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.router = void 0;
-var _Router = _interopRequireDefault(require("../../utils/classes/Router"));
-var router = new _Router["default"](".app");
-exports.router = router;

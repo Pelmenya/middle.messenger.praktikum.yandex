@@ -1,9 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.LIMIT_CHATS = exports.OFFSET_CHATS = exports.PART_OF_MESSAGES = void 0;
-var PART_OF_MESSAGES = 20, OFFSET_CHATS = 0, LIMIT_CHATS = 100;
-exports.LIMIT_CHATS = LIMIT_CHATS;
-exports.OFFSET_CHATS = OFFSET_CHATS;
-exports.PART_OF_MESSAGES = PART_OF_MESSAGES;
