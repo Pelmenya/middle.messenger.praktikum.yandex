@@ -11,12 +11,6 @@
     "test": "mocha -r jsdom-global/register",
     "deploy": "npm run build-net && npm run build-bundle"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm-run-all test",
-      "pre-push": "npm run test"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Pelmenya/middle.messenger.praktikum.yandex.git"
