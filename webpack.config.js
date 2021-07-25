@@ -1,6 +1,6 @@
 const path = require("path");
-
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 const webpackRules = require("./webpackRules");
 
 module.exports = {
@@ -29,7 +29,6 @@ module.exports = {
         use: [
           "style-loader",
           "css-loader",
-          'postcss-loader',
         ],
       },
       ...webpackRules,
@@ -37,6 +36,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      inject: false,
       template: "./static/index.html",
     }),
   ],
