@@ -70,7 +70,7 @@ export default class HTTPTransport {
 
 describe("Проверяем модуль отправки запросов к серверу", () => {
   function requestTest() {
-    const httpTransport = new HTTPTransport("http://localhost:3000");
+    const httpTransport = new HTTPTransport("http://localhost:4000");
     return httpTransport.get("/get", {} as Options);
   }
   it('При вызове метода GET возвращается от сервера объект { status: "success", message: "Welcome To Testing API" } и статус 200', async () => {
@@ -86,7 +86,7 @@ describe("Проверяем модуль отправки запросов к �
 
 describe("Проверяем модуль отправки запросов к серверу", () => {
   function requestTest() {
-    const httpTransport = new HTTPTransport("http://localhost:3000");
+    const httpTransport = new HTTPTransport("http://localhost:4000");
     return httpTransport.post("/post", {} as Options);
   }
   it('При вызове метода POST возвращается от сервера объект { status: "success", message: "Ok" } и статус 200', async () => {
@@ -102,7 +102,7 @@ describe("Проверяем модуль отправки запросов к �
 
 describe("Проверяем модуль отправки запросов к серверу", () => {
   function requestTest() {
-    const httpTransport = new HTTPTransport("http://localhost:3000");
+    const httpTransport = new HTTPTransport("http://localhost:4000");
     return httpTransport.delete("/delete", {} as Options);
   }
 
@@ -119,7 +119,7 @@ describe("Проверяем модуль отправки запросов к �
 
 describe("Проверяем модуль отправки запросов к серверу", () => {
   function requestTest() {
-    const httpTransport = new HTTPTransport("http://localhost:3000");
+    const httpTransport = new HTTPTransport("http://localhost:4000");
     return httpTransport.put("/put", {} as Options);
   }
   it('При вызове метода PUT возвращается от сервера объект { status: "success", message: "Ok" } и статус 200', async () => {
