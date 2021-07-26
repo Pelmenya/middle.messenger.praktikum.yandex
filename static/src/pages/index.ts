@@ -16,10 +16,10 @@ import SignInPage from "./classes/SignInPage";
 import SignUpPage from "./classes/SignUpPage";
 import { router } from "../const/objects/router";
 
-import "pages-css/index.css";
-import "pages-css/chat.css";
-import "pages-css/error-page.css";
-import "pages-css/my-account.css";
+import "pagesCSS/index.css";
+import "pagesCSS/chat.css";
+import "pagesCSS/error-page.css";
+import "pagesCSS/my-account.css";
 
 router
   .use(ROUTES.SIGNIN, SignInPage, getDataFromStore("signInProps"))

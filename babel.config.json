@@ -1,12 +1,10 @@
 {
   "presets": [
     "@babel/preset-typescript",
-    "@babel/preset-env",
-    "@parcel/babel-preset-env"
+    "@babel/preset-env"
   ],
 
   "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "@parcel/babel-plugin-transform-runtime"
+    "@babel/plugin-proposal-class-properties"
   ]
 }
