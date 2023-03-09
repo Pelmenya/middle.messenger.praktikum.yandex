@@ -1,6 +1,6 @@
 # Проектная работа №4
 
-«[Сайт проекта Messanger на Heroku](https://chat-for-people.herokuapp.com)»
+## [Сайт проекта Messenger](https://chat-for-people.website.yandexcloud.net/)
 
 ##  Тема: "Разработка приложения Чат"
 
